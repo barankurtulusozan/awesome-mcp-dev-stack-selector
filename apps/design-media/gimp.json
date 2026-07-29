@@ -1,0 +1,50 @@
+{
+  "id": "gimp",
+  "name": "GIMP",
+  "tagline": "GNU Image Manipulation Program - Free & open source image editor",
+  "description": "GIMP is a cross-platform image editor available for GNU/Linux, macOS, Windows and more operating systems. It is free software for photo retouching, image composition, and image authoring.",
+  "website": "https://www.gimp.org",
+  "repository": "https://gitlab.gnome.org/GNOME/gimp",
+  "license_spdx": "GPL-3.0-or-later",
+  "category": "design-media",
+  "tags": ["image-editor", "photoshop-alternative", "raster-graphics", "photo-retouching"],
+  "capabilities": [
+    "raster-editing",
+    "layer-management",
+    "plugin-support",
+    "color-correction",
+    "batch-processing"
+  ],
+  "import_export_formats": [".xcf", ".png", ".jpg", ".psd", ".tiff", ".webp"],
+  "platforms": ["macOS", "Windows", "Linux"],
+  "pricing": {
+    "model": "free_open_source",
+    "has_paid_tier": false
+  },
+  "privacy": {
+    "telemetry": false,
+    "offline_usable": true,
+    "cloud_sync_required": false
+  },
+  "self_hosting": {
+    "supported": false
+  },
+  "installation": {
+    "macOS": "brew install gimp",
+    "Windows": "winget install GIMP.GIMP",
+    "Linux": "snap install gimp"
+  },
+  "replaces": [
+    {
+      "target": "photoshop",
+      "migration_ease": "moderate",
+      "import_supported": true,
+      "notes": "Full raster manipulation and PSD file import support"
+    }
+  ],
+  "security": {
+    "verified_publisher": true,
+    "last_audit_date": "2026-07-30"
+  },
+  "health_status": "healthy"
+}

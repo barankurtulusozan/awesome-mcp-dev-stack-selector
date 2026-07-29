@@ -1,0 +1,57 @@
+{
+  "id": "dbeaver",
+  "name": "DBeaver Community",
+  "tagline": "Free multi-platform database tool for developers and DBAs",
+  "description": "DBeaver is a universal database management tool supporting PostgreSQL, MySQL, SQLite, Oracle, DB2, SQL Server, Sybase, MS Access, Teradata, Firebird, Derby, and over 100 JDBC-compliant databases.",
+  "website": "https://dbeaver.io",
+  "repository": "https://github.com/dbeaver/dbeaver",
+  "license_spdx": "Apache-2.0",
+  "category": "developer-tools",
+  "tags": ["database-client", "sql-editor", "erd-diagram", "datagrip-alternative", "multi-db"],
+  "capabilities": [
+    "sql-editor",
+    "schema-visualizer",
+    "data-export",
+    "mock-data-generator",
+    "ssh-tunneling"
+  ],
+  "import_export_formats": [".sql", ".csv", ".json", ".xml"],
+  "platforms": ["macOS", "Windows", "Linux"],
+  "pricing": {
+    "model": "free_open_source",
+    "has_paid_tier": true,
+    "paid_tier_description": "Enterprise Edition available for NoSQL & cloud DB extensions"
+  },
+  "privacy": {
+    "telemetry": false,
+    "offline_usable": true,
+    "cloud_sync_required": false
+  },
+  "self_hosting": {
+    "supported": false
+  },
+  "installation": {
+    "macOS": "brew install dbeaver-community",
+    "Windows": "winget install dbeaver.dbeaver",
+    "Linux": "snap install dbeaver-ce"
+  },
+  "replaces": [
+    {
+      "target": "datagrip",
+      "migration_ease": "seamless",
+      "import_supported": true,
+      "notes": "Full SQL editing, ER diagrams, and connection management"
+    },
+    {
+      "target": "navicat",
+      "migration_ease": "seamless",
+      "import_supported": true,
+      "notes": "Complete multi-database administrative coverage"
+    }
+  ],
+  "security": {
+    "verified_publisher": true,
+    "last_audit_date": "2026-07-30"
+  },
+  "health_status": "healthy"
+}

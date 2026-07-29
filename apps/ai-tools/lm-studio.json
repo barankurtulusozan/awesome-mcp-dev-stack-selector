@@ -1,0 +1,46 @@
+{
+  "id": "lm-studio",
+  "name": "LM Studio",
+  "tagline": "Discover, download, and run local LLMs offline on Mac, Windows, and Linux",
+  "description": "LM Studio is a desktop application that lets you run local LLMs such as Llama 3, Mistral, and Phi-3 offline. Provides a sleek chat UI, HuggingFace model downloader, and local OpenAI-compatible HTTP server.",
+  "website": "https://lmstudio.ai",
+  "license_spdx": "Proprietary-Free",
+  "category": "ai-tools",
+  "tags": ["local-llm", "huggingface", "ai-chat-ui", "openai-api-compatible", "gguf"],
+  "capabilities": [
+    "local-llm",
+    "gui-chat",
+    "model-downloader",
+    "openai-api",
+    "gpu-acceleration"
+  ],
+  "import_export_formats": ["gguf"],
+  "platforms": ["macOS", "Windows", "Linux"],
+  "pricing": {
+    "model": "free_proprietary",
+    "has_paid_tier": false
+  },
+  "privacy": {
+    "telemetry": false,
+    "offline_usable": true,
+    "cloud_sync_required": false
+  },
+  "installation": {
+    "macOS": "brew install lm-studio",
+    "Windows": "winget install LMStudio.LMStudio",
+    "Linux": "snap install lm-studio"
+  },
+  "replaces": [
+    {
+      "target": "chatgpt-desktop",
+      "migration_ease": "seamless",
+      "import_supported": true,
+      "notes": "100% offline desktop AI assistant utilizing open-weights models"
+    }
+  ],
+  "security": {
+    "verified_publisher": true,
+    "last_audit_date": "2026-07-30"
+  },
+  "health_status": "healthy"
+}

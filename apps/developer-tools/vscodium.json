@@ -1,0 +1,50 @@
+{
+  "id": "vscodium",
+  "name": "VSCodium",
+  "tagline": "Free and open-source binaries of VS Code without telemetry or tracking",
+  "description": "VSCodium is a community-driven release of Microsoft's VS Code editor. It builds clean, open-source binaries without proprietary Microsoft telemetry, tracking, or telemetry licenses.",
+  "website": "https://vscodium.com",
+  "repository": "https://github.com/VSCodium/vscodium",
+  "license_spdx": "MIT",
+  "category": "developer-tools",
+  "tags": ["code-editor", "ide", "vscode-alternative", "telemetry-free", "open-source"],
+  "capabilities": [
+    "extension-marketplace",
+    "integrated-terminal",
+    "git-integration",
+    "multi-language-support",
+    "debugging"
+  ],
+  "import_export_formats": ["vscode-settings", "extensions-json"],
+  "platforms": ["macOS", "Windows", "Linux"],
+  "pricing": {
+    "model": "free_open_source",
+    "has_paid_tier": false
+  },
+  "privacy": {
+    "telemetry": false,
+    "offline_usable": true,
+    "cloud_sync_required": false
+  },
+  "self_hosting": {
+    "supported": false
+  },
+  "installation": {
+    "macOS": "brew install vscodium",
+    "Windows": "winget install VSCodium.VSCodium",
+    "Linux": "snap install vscodium"
+  },
+  "replaces": [
+    {
+      "target": "vscode",
+      "migration_ease": "seamless",
+      "import_supported": true,
+      "notes": "Uses identical settings.json and extension format; Open VSX Registry replaces Microsoft Marketplace"
+    }
+  ],
+  "security": {
+    "verified_publisher": true,
+    "last_audit_date": "2026-07-30"
+  },
+  "health_status": "healthy"
+}

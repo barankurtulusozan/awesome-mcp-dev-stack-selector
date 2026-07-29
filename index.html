@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>awesome-mcp-dev-stack-selector — MCP-Native FOSS App Registry</title>
+  <meta name="description" content="Machine-readable community registry and Model Context Protocol (MCP) server for free & open-source software discovery and AI developer stack selection.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Background Glow & Particle Gradients -->
+  <div class="bg-glow bg-glow-1"></div>
+  <div class="bg-glow bg-glow-2"></div>
+
+  <!-- Navigation Bar -->
+  <header class="navbar">
+    <div class="container nav-container">
+      <a href="#" class="brand">
+        <span class="brand-icon">⚡</span>
+        <span class="brand-text">awesome-mcp-dev-stack-selector</span>
+      </a>
+      <nav class="nav-links">
+        <a href="#catalog" class="nav-link">Catalog</a>
+        <a href="#finder" class="nav-link">FOSS Alternative Finder</a>
+        <a href="#mcp-simulator" class="nav-link">MCP Playground</a>
+        <a href="#quickstart" class="nav-link btn-nav">Add to AI Agent</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="container hero-container">
+      <div class="hero-badge">
+        <span class="pulse-dot"></span> MCP Protocol v1.0 Ready & Offline-First
+      </div>
+      <h1 class="hero-title">
+        The Open-Source Dev Stack Registry <br>
+        <span class="gradient-text">Native for AI Coding Agents</span>
+      </h1>
+      <p class="hero-subtitle">
+        Supercharge Antigravity, Cursor, Claude Desktop, and VS Code with zero-latency FOSS software recommendations, capability search, and supply-chain audited package installs.
+      </p>
+
+      <div class="hero-actions">
+        <a href="#quickstart" class="btn btn-primary">
+          <span>⚡ Install MCP Server</span>
+        </a>
+        <a href="#finder" class="btn btn-secondary">
+          <span>🔍 Find Commercial Replacements</span>
+        </a>
+      </div>
+
+      <!-- Quick Stats -->
+      <div class="hero-stats">
+        <div class="stat-card">
+          <span class="stat-val" id="stat-total-apps">9</span>
+          <span class="stat-lbl">Verified FOSS Apps</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-val">0ms</span>
+          <span class="stat-lbl">Cold-Start Latency</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-val">100%</span>
+          <span class="stat-lbl">Command Sanitized</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-val">3-Tier</span>
+          <span class="stat-lbl">Offline Cache</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Search & Catalog Section -->
+  <section id="catalog" class="catalog-section">
+    <div class="container">
+      <div class="section-header text-center">
+        <h2>Explore FOSS Developer Tools</h2>
+        <p>Filter by platform, capabilities, category, or natural language intent</p>
+      </div>
+
+      <!-- Filter Bar -->
+      <div class="search-box-card">
+        <div class="search-input-wrapper">
+          <span class="search-icon">🔍</span>
+          <input type="text" id="search-input" placeholder="Search apps, tags, or capabilities (e.g. 'postman', 'offline-editing', 'local-llm')...">
+          <button id="clear-search" class="btn-clear hidden">✕</button>
+        </div>
+
+        <div class="filter-controls">
+          <div class="filter-group">
+            <label>Category:</label>
+            <select id="category-filter">
+              <option value="all">All Categories</option>
+              <option value="developer-tools">🛠️ Developer Tools</option>
+              <option value="ai-tools">🤖 Local AI & LLMs</option>
+              <option value="container-infra">🐳 Containers & Infra</option>
+              <option value="design-media">🎨 Design & Media</option>
+              <option value="productivity">📝 Productivity</option>
+            </select>
+          </div>
+
+          <div class="filter-group">
+            <label>Platform:</label>
+            <select id="platform-filter">
+              <option value="all">All Platforms</option>
+              <option value="macOS">macOS</option>
+              <option value="Windows">Windows</option>
+              <option value="Linux">Linux</option>
+            </select>
+          </div>
+
+          <div class="filter-group checkbox-group">
+            <input type="checkbox" id="offline-filter">
+            <label for="offline-filter">100% Offline Usable</label>
+          </div>
+        </div>
+      </div>
+
+      <!-- Apps Grid -->
+      <div id="apps-grid" class="apps-grid">
+        <!-- Rendered dynamically by app.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- FOSS Alternative Finder Section -->
+  <section id="finder" class="finder-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="tag-badge">Proprietary to Open-Source</span>
+        <h2>Commercial App Replacement Finder</h2>
+        <p>Type any paid or closed-source tool to discover seamless open-source alternatives</p>
+      </div>
+
+      <div class="finder-card">
+        <div class="finder-input-row">
+          <span class="finder-icon">🔄</span>
+          <input type="text" id="finder-input" placeholder="Enter commercial software (e.g. Postman, VS Code, Photoshop, Docker Desktop, Firebase)..." value="postman">
+          <button id="btn-run-finder" class="btn btn-primary btn-sm">Find FOSS Alternatives</button>
+        </div>
+
+        <div id="finder-results" class="finder-results-box">
+          <!-- Rendered dynamically -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive MCP Playground Simulator -->
+  <section id="mcp-simulator" class="simulator-section">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="tag-badge">Live Interactive Simulator</span>
+        <h2>MCP Tool Execution Playground</h2>
+        <p>Test how AI Agents (Antigravity, Cursor, Claude) query this MCP server in real-time</p>
+      </div>
+
+      <div class="playground-grid">
+        <div class="playground-panel">
+          <h3>1. Select MCP Tool / Surface</h3>
+          <div class="mcp-method-selector">
+            <button class="mcp-tab active" data-method="search_free_apps">Tool: search_free_apps</button>
+            <button class="mcp-tab" data-method="find_foss_alternative">Tool: find_foss_alternative</button>
+            <button class="mcp-tab" data-method="get_app_details">Tool: get_app_details</button>
+            <button class="mcp-tab" data-method="resource_registry">Resource: devstack://registry</button>
+          </div>
+
+          <div class="mcp-params-form" id="mcp-params-form">
+            <!-- Rendered dynamically -->
+          </div>
+
+          <button id="btn-execute-mcp" class="btn btn-accent full-width">⚡ Execute MCP Stdio Payload</button>
+        </div>
+
+        <div class="playground-panel terminal-panel">
+          <div class="terminal-header">
+            <div class="terminal-dots">
+              <span class="dot dot-red"></span>
+              <span class="dot dot-yellow"></span>
+              <span class="dot dot-green"></span>
+            </div>
+            <span class="terminal-title">stdio transport JSON response</span>
+          </div>
+          <pre id="mcp-output" class="terminal-body"><code>// Select a tool and click execute to view simulated JSON payload response...</code></pre>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quickstart Config Section -->
+  <section id="quickstart" class="quickstart-section">
+    <div class="container">
+      <div class="section-header text-center">
+        <h2>Add MCP Server to Your AI Coding Agent</h2>
+        <p>Copy and paste into your agent's MCP configuration settings</p>
+      </div>
+
+      <div class="config-box">
+        <div class="config-tabs">
+          <button class="config-tab active" data-target="cfg-claude">Claude Desktop / Antigravity</button>
+          <button class="config-tab" data-target="cfg-cursor">Cursor IDE</button>
+          <button class="config-tab" data-target="cfg-vscode">VS Code / Windsurf</button>
+        </div>
+
+        <div class="config-content">
+          <pre id="cfg-code"><code>{
+  "mcpServers": {
+    "dev-stack-selector": {
+      "command": "npx",
+      "args": ["-y", "@awesome-mcp-dev-stack-selector/mcp-server"]
+    }
+  }
+}</code></pre>
+          <button id="btn-copy-config" class="btn btn-secondary btn-copy">📋 Copy Configuration</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-container">
+      <p>MIT Licensed © 2026 <b>awesome-mcp-dev-stack-selector</b> Maintainers</p>
+      <div class="footer-links">
+        <a href="https://github.com/awesome-mcp-dev-stack-selector/awesome-mcp-dev-stack-selector" target="_blank">GitHub Repository</a>
+        <a href="https://modelcontextprotocol.io" target="_blank">MCP Protocol Spec</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

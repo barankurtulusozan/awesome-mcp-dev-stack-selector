@@ -1,0 +1,204 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/awesome-mcp-dev-stack-selector/main/schema/app.schema.json",
+  "title": "AwesomeMCPDevStackApp",
+  "description": "Schema for individual free and open-source application metadata entries in awesome-mcp-dev-stack-selector",
+  "type": "object",
+  "required": [
+    "id",
+    "name",
+    "tagline",
+    "description",
+    "website",
+    "license_spdx",
+    "category",
+    "tags",
+    "capabilities",
+    "platforms",
+    "pricing",
+    "privacy",
+    "installation"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9-]+$",
+      "description": "Unique kebab-case identifier for the app (e.g., bruno, vscodium)"
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 100
+    },
+    "tagline": {
+      "type": "string",
+      "minLength": 5,
+      "maxLength": 150
+    },
+    "description": {
+      "type": "string",
+      "minLength": 10,
+      "maxLength": 1000
+    },
+    "website": {
+      "type": "string",
+      "format": "uri"
+    },
+    "repository": {
+      "type": "string",
+      "format": "uri"
+    },
+    "license_spdx": {
+      "type": "string",
+      "description": "Official SPDX license identifier (e.g., MIT, AGPL-3.0-only, Apache-2.0, Proprietary-Free)"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "developer-tools",
+        "ai-tools",
+        "container-infra",
+        "design-media",
+        "productivity",
+        "security-networking",
+        "database-analytics"
+      ]
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^[a-z0-9-]+$"
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "capabilities": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^[a-z0-9-]+$"
+      },
+      "minItems": 1,
+      "uniqueItems": true,
+      "description": "Structured capabilities (e.g., offline-editing, git-versioning, local-llm, container-runtime)"
+    },
+    "import_export_formats": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
+    "platforms": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": ["macOS", "Windows", "Linux", "Web", "iOS", "Android"]
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "pricing": {
+      "type": "object",
+      "required": ["model", "has_paid_tier"],
+      "properties": {
+        "model": {
+          "type": "string",
+          "enum": ["free_open_source", "freemium", "free_proprietary", "paid_commercial"]
+        },
+        "has_paid_tier": {
+          "type": "boolean"
+        },
+        "paid_tier_description": {
+          "type": "string"
+        }
+      }
+    },
+    "privacy": {
+      "type": "object",
+      "required": ["telemetry", "offline_usable", "cloud_sync_required"],
+      "properties": {
+        "telemetry": {
+          "type": "boolean"
+        },
+        "offline_usable": {
+          "type": "boolean"
+        },
+        "cloud_sync_required": {
+          "type": "boolean"
+        }
+      }
+    },
+    "self_hosting": {
+      "type": "object",
+      "properties": {
+        "supported": {
+          "type": "boolean"
+        },
+        "docker_image": {
+          "type": "string"
+        },
+        "documentation_url": {
+          "type": "string",
+          "format": "uri"
+        }
+      }
+    },
+    "installation": {
+      "type": "object",
+      "properties": {
+        "macOS": {
+          "type": "string"
+        },
+        "Windows": {
+          "type": "string"
+        },
+        "Linux": {
+          "type": "string"
+        }
+      }
+    },
+    "replaces": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["target", "migration_ease"],
+        "properties": {
+          "target": {
+            "type": "string",
+            "pattern": "^[a-z0-9-]+$"
+          },
+          "migration_ease": {
+            "type": "string",
+            "enum": ["seamless", "moderate", "complex"]
+          },
+          "import_supported": {
+            "type": "boolean"
+          },
+          "notes": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "security": {
+      "type": "object",
+      "properties": {
+        "verified_publisher": {
+          "type": "boolean"
+        },
+        "last_audit_date": {
+          "type": "string",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+        }
+      }
+    },
+    "health_status": {
+      "type": "string",
+      "enum": ["healthy", "degraded", "archived"],
+      "default": "healthy"
+    }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,52 @@
+{
+  "id": "ollama",
+  "name": "Ollama",
+  "tagline": "Get up and running with Llama 3, Mistral, and other large language models locally",
+  "description": "Ollama allows you to run open-source large language models (LLMs) locally on macOS, Linux, and Windows. Includes a simple CLI, OpenAI-compatible REST API, and efficient model quantization support.",
+  "website": "https://ollama.com",
+  "repository": "https://github.com/ollama/ollama",
+  "license_spdx": "MIT",
+  "category": "ai-tools",
+  "tags": ["local-llm", "ai-inference", "openai-api-compatible", "llama", "mistral"],
+  "capabilities": [
+    "local-llm",
+    "openai-api",
+    "gpu-acceleration",
+    "modelfile-customization",
+    "vision-models"
+  ],
+  "import_export_formats": ["gguf", "modelfile"],
+  "platforms": ["macOS", "Windows", "Linux"],
+  "pricing": {
+    "model": "free_open_source",
+    "has_paid_tier": false
+  },
+  "privacy": {
+    "telemetry": false,
+    "offline_usable": true,
+    "cloud_sync_required": false
+  },
+  "self_hosting": {
+    "supported": true,
+    "docker_image": "ollama/ollama:latest",
+    "documentation_url": "https://hub.docker.com/r/ollama/ollama"
+  },
+  "installation": {
+    "macOS": "brew install ollama",
+    "Windows": "winget install Ollama.Ollama",
+    "Linux": "curl -fsSL https://ollama.com/install.sh | sh"
+  },
+  "replaces": [
+    {
+      "target": "openai-api",
+      "migration_ease": "seamless",
+      "import_supported": true,
+      "notes": "Exposes standard OpenAI /v1/chat/completions endpoint for local inference"
+    }
+  ],
+  "security": {
+    "verified_publisher": true,
+    "last_audit_date": "2026-07-30"
+  },
+  "health_status": "healthy"
+}

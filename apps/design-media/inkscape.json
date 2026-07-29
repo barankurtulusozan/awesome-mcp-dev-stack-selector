@@ -1,0 +1,50 @@
+{
+  "id": "inkscape",
+  "name": "Inkscape",
+  "tagline": "Professional vector graphics editor for Linux, Windows and macOS",
+  "description": "Inkscape is a free and open-source vector graphics editor used to create vector images, primarily in Scalable Vector Graphics (SVG) format. Ideal for illustrations, diagrams, logos, and typography.",
+  "website": "https://inkscape.org",
+  "repository": "https://gitlab.com/inkscape/inkscape",
+  "license_spdx": "GPL-3.0-or-later",
+  "category": "design-media",
+  "tags": ["vector-graphics", "svg-editor", "illustrator-alternative", "graphic-design"],
+  "capabilities": [
+    "vector-editing",
+    "svg-native",
+    "bezier-curves",
+    "node-editing",
+    "pdf-export"
+  ],
+  "import_export_formats": [".svg", ".pdf", ".ai", ".eps", ".png"],
+  "platforms": ["macOS", "Windows", "Linux"],
+  "pricing": {
+    "model": "free_open_source",
+    "has_paid_tier": false
+  },
+  "privacy": {
+    "telemetry": false,
+    "offline_usable": true,
+    "cloud_sync_required": false
+  },
+  "self_hosting": {
+    "supported": false
+  },
+  "installation": {
+    "macOS": "brew install inkscape",
+    "Windows": "winget install Inkscape.Inkscape",
+    "Linux": "snap install inkscape"
+  },
+  "replaces": [
+    {
+      "target": "adobe-illustrator",
+      "migration_ease": "moderate",
+      "import_supported": true,
+      "notes": "Native W3C SVG file format with Adobe Illustrator file import support"
+    }
+  ],
+  "security": {
+    "verified_publisher": true,
+    "last_audit_date": "2026-07-30"
+  },
+  "health_status": "healthy"
+}

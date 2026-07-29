@@ -1,0 +1,52 @@
+{
+  "id": "pocketbase",
+  "name": "PocketBase",
+  "tagline": "Open Source backend in 1 file with real-time database, auth, and file storage",
+  "description": "PocketBase is an open-source Go backend consisting of embedded SQLite database with real-time subscriptions, built-in user management, file storage, and an intuitive admin dashboard.",
+  "website": "https://pocketbase.io",
+  "repository": "https://github.com/pocketbase/pocketbase",
+  "license_spdx": "MIT",
+  "category": "container-infra",
+  "tags": ["backend-as-a-service", "firebase-alternative", "sqlite", "realtime", "auth"],
+  "capabilities": [
+    "realtime-subscriptions",
+    "user-auth",
+    "file-storage",
+    "admin-ui",
+    "single-binary"
+  ],
+  "import_export_formats": [".sqlite", ".json"],
+  "platforms": ["macOS", "Windows", "Linux"],
+  "pricing": {
+    "model": "free_open_source",
+    "has_paid_tier": false
+  },
+  "privacy": {
+    "telemetry": false,
+    "offline_usable": true,
+    "cloud_sync_required": false
+  },
+  "self_hosting": {
+    "supported": true,
+    "docker_image": "ghcr.io/muchweb/pocketbase:latest",
+    "documentation_url": "https://pocketbase.io/docs/going-to-production/"
+  },
+  "installation": {
+    "macOS": "brew install pocketbase",
+    "Windows": "winget install PocketBase.PocketBase",
+    "Linux": "snap install pocketbase"
+  },
+  "replaces": [
+    {
+      "target": "firebase",
+      "migration_ease": "moderate",
+      "import_supported": false,
+      "notes": "Replaces Firestore real-time DB, Auth, and Storage with zero-cost self-hosted single binary"
+    }
+  ],
+  "security": {
+    "verified_publisher": true,
+    "last_audit_date": "2026-07-30"
+  },
+  "health_status": "healthy"
+}

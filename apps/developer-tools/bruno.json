@@ -1,0 +1,57 @@
+{
+  "id": "bruno",
+  "name": "Bruno",
+  "tagline": "Fast, offline-first, Git-friendly open-source API client",
+  "description": "An open-source alternative to Postman and Insomnia. Bruno stores your API collections directly as files on your filesystem using plain text markup format (Bru), making them easy to version control with Git.",
+  "website": "https://www.usebruno.com",
+  "repository": "https://github.com/usebruno/bruno",
+  "license_spdx": "MIT",
+  "category": "developer-tools",
+  "tags": ["api-client", "rest", "graphql", "postman-alternative", "offline-first", "git-friendly"],
+  "capabilities": [
+    "offline-editing",
+    "git-versioning",
+    "scripting",
+    "environment-variables",
+    "collection-runner"
+  ],
+  "import_export_formats": [".bru", ".json", "postman-collection-v2", "openapi-v3"],
+  "platforms": ["macOS", "Windows", "Linux"],
+  "pricing": {
+    "model": "free_open_source",
+    "has_paid_tier": true,
+    "paid_tier_description": "Optional Golden Edition for enterprise features"
+  },
+  "privacy": {
+    "telemetry": false,
+    "offline_usable": true,
+    "cloud_sync_required": false
+  },
+  "self_hosting": {
+    "supported": false
+  },
+  "installation": {
+    "macOS": "brew install bruno",
+    "Windows": "winget install Bruno.Bruno",
+    "Linux": "snap install bruno"
+  },
+  "replaces": [
+    {
+      "target": "postman",
+      "migration_ease": "seamless",
+      "import_supported": true,
+      "notes": "Directly imports Postman v2 collections and environment files"
+    },
+    {
+      "target": "insomnia",
+      "migration_ease": "seamless",
+      "import_supported": true,
+      "notes": "Supports Insomnia v4 export JSON files"
+    }
+  ],
+  "security": {
+    "verified_publisher": true,
+    "last_audit_date": "2026-07-30"
+  },
+  "health_status": "healthy"
+}

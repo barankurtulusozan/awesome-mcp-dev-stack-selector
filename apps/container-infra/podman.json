@@ -1,0 +1,50 @@
+{
+  "id": "podman",
+  "name": "Podman",
+  "tagline": "Daemonless, rootless open-source container engine",
+  "description": "Podman is a daemonless container engine for developing, managing, and running OCI Containers on your Linux System or macOS/Windows via Podman Desktop. Podman provides a Docker-compatible CLI.",
+  "website": "https://podman.io",
+  "repository": "https://github.com/containers/podman",
+  "license_spdx": "Apache-2.0",
+  "category": "container-infra",
+  "tags": ["container-engine", "docker-alternative", "rootless", "kubernetes-yaml", "oci"],
+  "capabilities": [
+    "container-runtime",
+    "rootless-containers",
+    "pod-management",
+    "kube-generate",
+    "docker-cli-alias"
+  ],
+  "import_export_formats": ["dockerfile", "containerfile", "kubernetes-yaml"],
+  "platforms": ["macOS", "Windows", "Linux"],
+  "pricing": {
+    "model": "free_open_source",
+    "has_paid_tier": false
+  },
+  "privacy": {
+    "telemetry": false,
+    "offline_usable": true,
+    "cloud_sync_required": false
+  },
+  "self_hosting": {
+    "supported": true
+  },
+  "installation": {
+    "macOS": "brew install podman",
+    "Windows": "winget install RedHat.Podman-Desktop",
+    "Linux": "snap install podman"
+  },
+  "replaces": [
+    {
+      "target": "docker-desktop",
+      "migration_ease": "seamless",
+      "import_supported": true,
+      "notes": "Drop-in alias `alias docker=podman` supports standard Dockerfiles and Compose"
+    }
+  ],
+  "security": {
+    "verified_publisher": true,
+    "last_audit_date": "2026-07-30"
+  },
+  "health_status": "healthy"
+}
