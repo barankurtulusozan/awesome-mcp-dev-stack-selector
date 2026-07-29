@@ -5,7 +5,8 @@ const { globSync } = require('glob');
 const ROOT_DIR = path.join(__dirname, '..');
 const APPS_DIR = path.join(ROOT_DIR, 'apps');
 const DIST_DIR = path.join(ROOT_DIR, 'dist');
-const MCP_BUNDLED_PATH = path.join(ROOT_DIR, 'mcp-server', 'src', 'bundled-registry.json');
+const MCP_SRC_BUNDLED_PATH = path.join(ROOT_DIR, 'mcp-server', 'src', 'bundled-registry.json');
+const MCP_DIST_BUNDLED_PATH = path.join(ROOT_DIR, 'mcp-server', 'dist', 'bundled-registry.json');
 const README_PATH = path.join(ROOT_DIR, 'README.md');
 
 function copyFolderRecursiveSync(source, target) {
@@ -31,9 +32,14 @@ function build() {
     fs.mkdirSync(DIST_DIR, { recursive: true });
   }
 
-  const mcpSrcDir = path.dirname(MCP_BUNDLED_PATH);
+  const mcpSrcDir = path.dirname(MCP_SRC_BUNDLED_PATH);
   if (!fs.existsSync(mcpSrcDir)) {
     fs.mkdirSync(mcpSrcDir, { recursive: true });
+  }
+
+  const mcpDistDir = path.dirname(MCP_DIST_BUNDLED_PATH);
+  if (!fs.existsSync(mcpDistDir)) {
+    fs.mkdirSync(mcpDistDir, { recursive: true });
   }
 
   const files = globSync('**/*.json', { cwd: APPS_DIR, absolute: true });
@@ -59,14 +65,15 @@ function build() {
 
   const registryJson = JSON.stringify(registry, null, 2);
 
-  // 1. Write registry.json inside dist/ and mcp-server/src/
+  // 1. Write registry.json inside root dist, mcp-server/src, and mcp-server/dist
   const distRegistryDir = path.join(DIST_DIR, 'dist');
   if (!fs.existsSync(distRegistryDir)) {
     fs.mkdirSync(distRegistryDir, { recursive: true });
   }
   fs.writeFileSync(path.join(DIST_DIR, 'registry.json'), registryJson, 'utf8');
   fs.writeFileSync(path.join(distRegistryDir, 'registry.json'), registryJson, 'utf8');
-  fs.writeFileSync(MCP_BUNDLED_PATH, registryJson, 'utf8');
+  fs.writeFileSync(MCP_SRC_BUNDLED_PATH, registryJson, 'utf8');
+  fs.writeFileSync(MCP_DIST_BUNDLED_PATH, registryJson, 'utf8');
 
   // 2. Copy web application static files to dist/ for GitHub Pages
   const webFiles = ['index.html', 'styles.css', 'app.js'];
