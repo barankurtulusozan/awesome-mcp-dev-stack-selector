@@ -5,13 +5,11 @@ on:
     branches: [ main ]
   workflow_dispatch:
 
-# Grant GitHub Actions permissions to deploy to GitHub Pages
 permissions:
   contents: read
   pages: write
   id-token: write
 
-# Allow only one concurrent deployment, skipping runs in progress
 concurrency:
   group: "pages"
   cancel-in-progress: true
@@ -33,9 +31,7 @@ jobs:
           cache: 'npm'
 
       - name: Install Dependencies
-        run: |
-          npm ci
-          npm --prefix mcp-server ci
+        run: npm ci
 
       - name: Build Web App, Registry & MCP Server
         run: npm run test

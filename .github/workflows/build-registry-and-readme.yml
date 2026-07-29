@@ -22,9 +22,7 @@ jobs:
           cache: 'npm'
 
       - name: Install Dependencies
-        run: |
-          npm ci
-          npm --prefix mcp-server ci
+        run: npm ci
 
       - name: Validate & Build Registry
         run: npm run test
