@@ -39,6 +39,9 @@ async function runTests() {
   console.log(`✅ Test 5 Passed: App entity lookup and schema properties verified.`);
 
   console.log('\n🎉 All 5 MCP Server integration test cases PASSED successfully!');
+  
+  // Explicitly exit process to prevent hanging event loops in CI
+  process.exit(0);
 }
 
 runTests().catch((err) => {

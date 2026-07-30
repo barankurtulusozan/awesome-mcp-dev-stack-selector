@@ -86,16 +86,18 @@ export class CacheManager {
           storedEtag = fs.readFileSync(ETAG_FILE, 'utf8').trim();
         }
 
-        const req = https.request(REMOTE_REGISTRY_URL, { method: 'HEAD', timeout: 3000 }, (res) => {
+        const req = https.request(REMOTE_REGISTRY_URL, { method: 'HEAD', timeout: 2000 }, (res) => {
           const newEtag = (res.headers.etag || res.headers['last-modified'] || '') as string;
+          res.destroy();
 
           if (res.statusCode === 200 && newEtag && newEtag === storedEtag) {
             resolve();
             return;
           }
 
-          https.get(REMOTE_REGISTRY_URL, { timeout: 5000 }, (fetchRes) => {
+          const fetchReq = https.get(REMOTE_REGISTRY_URL, { timeout: 3000 }, (fetchRes) => {
             if (fetchRes.statusCode !== 200) {
+              fetchRes.destroy();
               resolve();
               return;
             }
@@ -103,6 +105,7 @@ export class CacheManager {
             let body = '';
             fetchRes.on('data', (chunk) => body += chunk);
             fetchRes.on('end', () => {
+              fetchRes.destroy();
               try {
                 const parsed = JSON.parse(body) as RegistryData;
                 if (parsed.apps && Array.isArray(parsed.apps) && parsed.apps.length > 0) {
@@ -120,10 +123,26 @@ export class CacheManager {
               }
               resolve();
             });
-          }).on('error', () => resolve());
+            fetchRes.on('error', () => {
+              fetchRes.destroy();
+              resolve();
+            });
+          });
+
+          fetchReq.on('error', () => {
+            fetchReq.destroy();
+            resolve();
+          });
+          fetchReq.on('timeout', () => {
+            fetchReq.destroy();
+            resolve();
+          });
         });
 
-        req.on('error', () => resolve());
+        req.on('error', () => {
+          req.destroy();
+          resolve();
+        });
         req.on('timeout', () => {
           req.destroy();
           resolve();
