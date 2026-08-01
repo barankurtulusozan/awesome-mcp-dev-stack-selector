@@ -1,0 +1,47 @@
+{
+  "vscodium": {
+    "consecutive_fails": 0,
+    "last_check": "2026-08-01T22:06:08.327Z",
+    "status": "healthy"
+  },
+  "dbeaver": {
+    "consecutive_fails": 0,
+    "last_check": "2026-08-01T22:06:10.105Z",
+    "status": "healthy"
+  },
+  "bruno": {
+    "consecutive_fails": 0,
+    "last_check": "2026-08-01T22:06:11.405Z",
+    "status": "healthy"
+  },
+  "inkscape": {
+    "consecutive_fails": 0,
+    "last_check": "2026-08-01T22:06:12.992Z",
+    "status": "healthy"
+  },
+  "gimp": {
+    "consecutive_fails": 1,
+    "last_check": "2026-08-01T22:06:13.946Z",
+    "status": "healthy"
+  },
+  "podman": {
+    "consecutive_fails": 0,
+    "last_check": "2026-08-01T22:06:14.608Z",
+    "status": "healthy"
+  },
+  "pocketbase": {
+    "consecutive_fails": 0,
+    "last_check": "2026-08-01T22:06:15.623Z",
+    "status": "healthy"
+  },
+  "ollama": {
+    "consecutive_fails": 0,
+    "last_check": "2026-08-01T22:06:16.546Z",
+    "status": "healthy"
+  },
+  "lm-studio": {
+    "consecutive_fails": 0,
+    "last_check": "2026-08-01T22:06:17.850Z",
+    "status": "healthy"
+  }
+}
