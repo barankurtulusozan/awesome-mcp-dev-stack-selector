@@ -7,7 +7,13 @@
   "repository": "https://github.com/dbeaver/dbeaver",
   "license_spdx": "Apache-2.0",
   "category": "developer-tools",
-  "tags": ["database-client", "sql-editor", "erd-diagram", "datagrip-alternative", "multi-db"],
+  "tags": [
+    "database-client",
+    "sql-editor",
+    "erd-diagram",
+    "datagrip-alternative",
+    "multi-db"
+  ],
   "capabilities": [
     "sql-editor",
     "schema-visualizer",
@@ -15,8 +21,17 @@
     "mock-data-generator",
     "ssh-tunneling"
   ],
-  "import_export_formats": [".sql", ".csv", ".json", ".xml"],
-  "platforms": ["macOS", "Windows", "Linux"],
+  "import_export_formats": [
+    ".sql",
+    ".csv",
+    ".json",
+    ".xml"
+  ],
+  "platforms": [
+    "macOS",
+    "Windows",
+    "Linux"
+  ],
   "pricing": {
     "model": "free_open_source",
     "has_paid_tier": true,

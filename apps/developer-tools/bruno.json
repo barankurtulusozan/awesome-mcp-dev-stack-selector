@@ -7,7 +7,14 @@
   "repository": "https://github.com/usebruno/bruno",
   "license_spdx": "MIT",
   "category": "developer-tools",
-  "tags": ["api-client", "rest", "graphql", "postman-alternative", "offline-first", "git-friendly"],
+  "tags": [
+    "api-client",
+    "rest",
+    "graphql",
+    "postman-alternative",
+    "offline-first",
+    "git-friendly"
+  ],
   "capabilities": [
     "offline-editing",
     "git-versioning",
@@ -15,8 +22,17 @@
     "environment-variables",
     "collection-runner"
   ],
-  "import_export_formats": [".bru", ".json", "postman-collection-v2", "openapi-v3"],
-  "platforms": ["macOS", "Windows", "Linux"],
+  "import_export_formats": [
+    ".bru",
+    ".json",
+    "postman-collection-v2",
+    "openapi-v3"
+  ],
+  "platforms": [
+    "macOS",
+    "Windows",
+    "Linux"
+  ],
   "pricing": {
     "model": "free_open_source",
     "has_paid_tier": true,

@@ -7,7 +7,13 @@
   "repository": "https://github.com/VSCodium/vscodium",
   "license_spdx": "MIT",
   "category": "developer-tools",
-  "tags": ["code-editor", "ide", "vscode-alternative", "telemetry-free", "open-source"],
+  "tags": [
+    "code-editor",
+    "ide",
+    "vscode-alternative",
+    "telemetry-free",
+    "open-source"
+  ],
   "capabilities": [
     "extension-marketplace",
     "integrated-terminal",
@@ -15,8 +21,15 @@
     "multi-language-support",
     "debugging"
   ],
-  "import_export_formats": ["vscode-settings", "extensions-json"],
-  "platforms": ["macOS", "Windows", "Linux"],
+  "import_export_formats": [
+    "vscode-settings",
+    "extensions-json"
+  ],
+  "platforms": [
+    "macOS",
+    "Windows",
+    "Linux"
+  ],
   "pricing": {
     "model": "free_open_source",
     "has_paid_tier": false

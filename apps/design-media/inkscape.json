@@ -7,7 +7,12 @@
   "repository": "https://gitlab.com/inkscape/inkscape",
   "license_spdx": "GPL-3.0-or-later",
   "category": "design-media",
-  "tags": ["vector-graphics", "svg-editor", "illustrator-alternative", "graphic-design"],
+  "tags": [
+    "vector-graphics",
+    "svg-editor",
+    "illustrator-alternative",
+    "graphic-design"
+  ],
   "capabilities": [
     "vector-editing",
     "svg-native",
@@ -15,8 +20,18 @@
     "node-editing",
     "pdf-export"
   ],
-  "import_export_formats": [".svg", ".pdf", ".ai", ".eps", ".png"],
-  "platforms": ["macOS", "Windows", "Linux"],
+  "import_export_formats": [
+    ".svg",
+    ".pdf",
+    ".ai",
+    ".eps",
+    ".png"
+  ],
+  "platforms": [
+    "macOS",
+    "Windows",
+    "Linux"
+  ],
   "pricing": {
     "model": "free_open_source",
     "has_paid_tier": false

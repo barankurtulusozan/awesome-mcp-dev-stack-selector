@@ -7,7 +7,13 @@
   "repository": "https://github.com/containers/podman",
   "license_spdx": "Apache-2.0",
   "category": "container-infra",
-  "tags": ["container-engine", "docker-alternative", "rootless", "kubernetes-yaml", "oci"],
+  "tags": [
+    "container-engine",
+    "docker-alternative",
+    "rootless",
+    "kubernetes-yaml",
+    "oci"
+  ],
   "capabilities": [
     "container-runtime",
     "rootless-containers",
@@ -15,8 +21,16 @@
     "kube-generate",
     "docker-cli-alias"
   ],
-  "import_export_formats": ["dockerfile", "containerfile", "kubernetes-yaml"],
-  "platforms": ["macOS", "Windows", "Linux"],
+  "import_export_formats": [
+    "dockerfile",
+    "containerfile",
+    "kubernetes-yaml"
+  ],
+  "platforms": [
+    "macOS",
+    "Windows",
+    "Linux"
+  ],
   "pricing": {
     "model": "free_open_source",
     "has_paid_tier": false

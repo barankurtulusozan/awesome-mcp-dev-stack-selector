@@ -6,7 +6,13 @@
   "website": "https://lmstudio.ai",
   "license_spdx": "Proprietary-Free",
   "category": "ai-tools",
-  "tags": ["local-llm", "huggingface", "ai-chat-ui", "openai-api-compatible", "gguf"],
+  "tags": [
+    "local-llm",
+    "huggingface",
+    "ai-chat-ui",
+    "openai-api-compatible",
+    "gguf"
+  ],
   "capabilities": [
     "local-llm",
     "gui-chat",
@@ -14,8 +20,14 @@
     "openai-api",
     "gpu-acceleration"
   ],
-  "import_export_formats": ["gguf"],
-  "platforms": ["macOS", "Windows", "Linux"],
+  "import_export_formats": [
+    "gguf"
+  ],
+  "platforms": [
+    "macOS",
+    "Windows",
+    "Linux"
+  ],
   "pricing": {
     "model": "free_proprietary",
     "has_paid_tier": false

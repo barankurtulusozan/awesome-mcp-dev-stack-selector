@@ -7,7 +7,13 @@
   "repository": "https://github.com/pocketbase/pocketbase",
   "license_spdx": "MIT",
   "category": "container-infra",
-  "tags": ["backend-as-a-service", "firebase-alternative", "sqlite", "realtime", "auth"],
+  "tags": [
+    "backend-as-a-service",
+    "firebase-alternative",
+    "sqlite",
+    "realtime",
+    "auth"
+  ],
   "capabilities": [
     "realtime-subscriptions",
     "user-auth",
@@ -15,8 +21,15 @@
     "admin-ui",
     "single-binary"
   ],
-  "import_export_formats": [".sqlite", ".json"],
-  "platforms": ["macOS", "Windows", "Linux"],
+  "import_export_formats": [
+    ".sqlite",
+    ".json"
+  ],
+  "platforms": [
+    "macOS",
+    "Windows",
+    "Linux"
+  ],
   "pricing": {
     "model": "free_open_source",
     "has_paid_tier": false

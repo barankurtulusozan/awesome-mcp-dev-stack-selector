@@ -7,7 +7,12 @@
   "repository": "https://gitlab.gnome.org/GNOME/gimp",
   "license_spdx": "GPL-3.0-or-later",
   "category": "design-media",
-  "tags": ["image-editor", "photoshop-alternative", "raster-graphics", "photo-retouching"],
+  "tags": [
+    "image-editor",
+    "photoshop-alternative",
+    "raster-graphics",
+    "photo-retouching"
+  ],
   "capabilities": [
     "raster-editing",
     "layer-management",
@@ -15,8 +20,19 @@
     "color-correction",
     "batch-processing"
   ],
-  "import_export_formats": [".xcf", ".png", ".jpg", ".psd", ".tiff", ".webp"],
-  "platforms": ["macOS", "Windows", "Linux"],
+  "import_export_formats": [
+    ".xcf",
+    ".png",
+    ".jpg",
+    ".psd",
+    ".tiff",
+    ".webp"
+  ],
+  "platforms": [
+    "macOS",
+    "Windows",
+    "Linux"
+  ],
   "pricing": {
     "model": "free_open_source",
     "has_paid_tier": false

@@ -7,7 +7,13 @@
   "repository": "https://github.com/ollama/ollama",
   "license_spdx": "MIT",
   "category": "ai-tools",
-  "tags": ["local-llm", "ai-inference", "openai-api-compatible", "llama", "mistral"],
+  "tags": [
+    "local-llm",
+    "ai-inference",
+    "openai-api-compatible",
+    "llama",
+    "mistral"
+  ],
   "capabilities": [
     "local-llm",
     "openai-api",
@@ -15,8 +21,15 @@
     "modelfile-customization",
     "vision-models"
   ],
-  "import_export_formats": ["gguf", "modelfile"],
-  "platforms": ["macOS", "Windows", "Linux"],
+  "import_export_formats": [
+    "gguf",
+    "modelfile"
+  ],
+  "platforms": [
+    "macOS",
+    "Windows",
+    "Linux"
+  ],
   "pricing": {
     "model": "free_open_source",
     "has_paid_tier": false
