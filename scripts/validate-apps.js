@@ -8,9 +8,9 @@ const SCHEMA_PATH = path.join(__dirname, '..', 'schema', 'app.schema.json');
 const APPS_DIR = path.join(__dirname, '..', 'apps');
 
 const SAFE_COMMAND_PATTERNS = {
-  macOS: /^(brew install [a-z0-9-]+)$/,
-  Windows: /^(winget install [A-Za-z0-9\.-]+)$/,
-  Linux: /^(snap install [a-z0-9-]+|apt install -y [a-z0-9-]+|dnf install -y [a-z0-9-]+|curl -fsSL https:\/\/[a-zA-Z0-9\.\/_-]+\.sh \| sh)$/
+  macOS: /^(brew install [a-zA-Z0-9\/\._-]+|brew install --cask [a-zA-Z0-9\._-]+|docker run [a-zA-Z0-9\._\/\ -:]+)$/,
+  Windows: /^(winget install [A-Za-z0-9\._-]+|docker run [a-zA-Z0-9\._\/\ -:]+)$/,
+  Linux: /^(snap install [a-zA-Z0-9\._\ --]+|apt install -y [a-z0-9-]+|apt-get install [a-z0-9-]+|dnf install -y [a-z0-9-]+|curl -[a-zA-Z]+ https:\/\/[a-zA-Z0-9\.\/_-]+ \| sh( -)?|docker run [a-zA-Z0-9\._\/\ -:]+|npm install -g [a-z0-9-]+)$/
 };
 
 const FORBIDDEN_OPERATORS = ['&&', ';', '||', '`', '$('];

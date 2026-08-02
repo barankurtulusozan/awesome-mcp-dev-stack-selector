@@ -2,11 +2,147 @@
   "$schema": "https://raw.githubusercontent.com/awesome-mcp-dev-stack-selector/main/schema/app.schema.json",
   "meta": {
     "version": "2.0.0",
-    "total_apps": 9,
-    "last_updated": "2026-08-01T22:06:41.159Z",
+    "total_apps": 20,
+    "last_updated": "2026-08-02T20:42:21.940Z",
     "generator": "awesome-mcp-dev-stack-selector build-script"
   },
   "apps": [
+    {
+      "$schema": "https://raw.githubusercontent.com/awesome-mcp-dev-stack-selector/main/schema/app.schema.json",
+      "id": "anything-llm",
+      "name": "AnythingLLM",
+      "tagline": "Full-Stack Desktop AI Assistant & Local RAG",
+      "description": "All-in-one desktop AI application that turns your documents into context for any local or hosted LLM with full privacy.",
+      "website": "https://anythingllm.com",
+      "repository": "https://github.com/Mintplex-Labs/anything-llm",
+      "license_spdx": "MIT",
+      "category": "ai-tools",
+      "tags": [
+        "local-rag",
+        "document-chat",
+        "vector-database",
+        "ai-workspace",
+        "agent-tools"
+      ],
+      "capabilities": [
+        "local-llm",
+        "document-indexing",
+        "vector-search",
+        "multi-user-support",
+        "offline-usable"
+      ],
+      "import_export_formats": [
+        ".pdf",
+        ".docx",
+        ".txt",
+        ".md",
+        ".json"
+      ],
+      "platforms": [
+        "macOS",
+        "Windows",
+        "Linux"
+      ],
+      "pricing": {
+        "model": "free_open_source",
+        "has_paid_tier": true,
+        "paid_tier_description": "AnythingLLM Cloud hosted enterprise tier available"
+      },
+      "privacy": {
+        "telemetry": false,
+        "offline_usable": true,
+        "cloud_sync_required": false
+      },
+      "self_hosting": {
+        "supported": true,
+        "docker_compose": true
+      },
+      "installation": {
+        "macOS": "brew install --cask anythingllm",
+        "Windows": "winget install MintplexLabs.AnythingLLM",
+        "Linux": "docker run -p 3001:3001 mintplexlabs/anythingllm"
+      },
+      "replaces": [
+        {
+          "target": "custom-gpt",
+          "migration_ease": "seamless",
+          "import_supported": true,
+          "notes": "Self-hosted RAG pipeline over local PDF, DOCX, and text repositories."
+        }
+      ],
+      "security": {
+        "verified_publisher": true,
+        "last_audit_date": "2026-08-01"
+      },
+      "health_status": "healthy"
+    },
+    {
+      "$schema": "https://raw.githubusercontent.com/awesome-mcp-dev-stack-selector/main/schema/app.schema.json",
+      "id": "appwrite",
+      "name": "Appwrite",
+      "tagline": "Secure Open Source Backend for Web, Mobile & Flutter Developers",
+      "description": "Self-hosted backend-as-a-service providing auth, databases, serverless functions, storage, and real-time messaging.",
+      "website": "https://appwrite.io",
+      "repository": "https://github.com/appwrite/appwrite",
+      "license_spdx": "BSD-3-Clause",
+      "category": "database-backend",
+      "tags": [
+        "baas",
+        "firebase-alternative",
+        "backend",
+        "authentication",
+        "serverless",
+        "databases"
+      ],
+      "capabilities": [
+        "self-hosting",
+        "authentication",
+        "storage-management",
+        "serverless-functions",
+        "realtime-events"
+      ],
+      "import_export_formats": [
+        ".json",
+        ".csv"
+      ],
+      "platforms": [
+        "macOS",
+        "Windows",
+        "Linux"
+      ],
+      "pricing": {
+        "model": "free_open_source",
+        "has_paid_tier": true,
+        "paid_tier_description": "Appwrite Cloud paid plans available"
+      },
+      "privacy": {
+        "telemetry": false,
+        "offline_usable": true,
+        "cloud_sync_required": false
+      },
+      "self_hosting": {
+        "supported": true,
+        "docker_compose": true
+      },
+      "installation": {
+        "macOS": "docker run -it --rm appwrite/appwrite:latest",
+        "Windows": "docker run -it --rm appwrite/appwrite:latest",
+        "Linux": "docker run -it --rm appwrite/appwrite:latest"
+      },
+      "replaces": [
+        {
+          "target": "firebase",
+          "migration_ease": "moderate",
+          "import_supported": true,
+          "notes": "Full end-to-end self-hosted BaaS alternative to Firebase and AWS Amplify."
+        }
+      ],
+      "security": {
+        "verified_publisher": true,
+        "last_audit_date": "2026-08-01"
+      },
+      "health_status": "healthy"
+    },
     {
       "id": "bruno",
       "name": "Bruno",
@@ -219,6 +355,73 @@
       "health_status": "healthy"
     },
     {
+      "$schema": "https://raw.githubusercontent.com/awesome-mcp-dev-stack-selector/main/schema/app.schema.json",
+      "id": "hoppscotch",
+      "name": "Hoppscotch",
+      "tagline": "Open Source API Development Ecosystem",
+      "description": "Lightweight, web-first and desktop API development suite for REST, GraphQL, WebSocket, Socket.IO, and SSE testing.",
+      "website": "https://hoppscotch.io",
+      "repository": "https://github.com/hoppscotch/hoppscotch",
+      "license_spdx": "MIT",
+      "category": "developer-tools",
+      "tags": [
+        "api-client",
+        "postman-alternative",
+        "rest",
+        "graphql",
+        "websocket"
+      ],
+      "capabilities": [
+        "self-hosting",
+        "web-based",
+        "graphql-client",
+        "websocket-testing",
+        "environment-variables"
+      ],
+      "import_export_formats": [
+        ".json",
+        "postman-collection-v2",
+        "openapi-spec"
+      ],
+      "platforms": [
+        "macOS",
+        "Windows",
+        "Linux"
+      ],
+      "pricing": {
+        "model": "free_open_source",
+        "has_paid_tier": true,
+        "paid_tier_description": "Hoppscotch Enterprise self-hosted tier available"
+      },
+      "privacy": {
+        "telemetry": false,
+        "offline_usable": true,
+        "cloud_sync_required": false
+      },
+      "self_hosting": {
+        "supported": true,
+        "docker_compose": true
+      },
+      "installation": {
+        "macOS": "brew install --cask hoppscotch",
+        "Windows": "winget install Hoppscotch.Hoppscotch",
+        "Linux": "snap install hoppscotch"
+      },
+      "replaces": [
+        {
+          "target": "postman",
+          "migration_ease": "seamless",
+          "import_supported": true,
+          "notes": "Seamless import of Postman collections with multi-protocol support including WebSockets."
+        }
+      ],
+      "security": {
+        "verified_publisher": true,
+        "last_audit_date": "2026-08-01"
+      },
+      "health_status": "healthy"
+    },
+    {
       "id": "inkscape",
       "name": "Inkscape",
       "tagline": "Professional vector graphics editor for Linux, Windows and macOS",
@@ -284,6 +487,131 @@
       "health_status": "healthy"
     },
     {
+      "$schema": "https://raw.githubusercontent.com/awesome-mcp-dev-stack-selector/main/schema/app.schema.json",
+      "id": "jan",
+      "name": "Jan",
+      "tagline": "Rethinking the AI Desktop Client",
+      "description": "An open-source alternative to ChatGPT that runs 100% offline on your computer with local GGUF models.",
+      "website": "https://jan.ai",
+      "repository": "https://github.com/janhq/jan",
+      "license_spdx": "AGPL-3.0",
+      "category": "ai-tools",
+      "tags": [
+        "local-ai",
+        "chatgpt-alternative",
+        "offline-llm",
+        "gguf",
+        "privacy-first"
+      ],
+      "capabilities": [
+        "local-llm",
+        "offline-usable",
+        "openai-api-compatibility",
+        "model-management"
+      ],
+      "import_export_formats": [
+        ".gguf",
+        ".json"
+      ],
+      "platforms": [
+        "macOS",
+        "Windows",
+        "Linux"
+      ],
+      "pricing": {
+        "model": "free_open_source",
+        "has_paid_tier": false
+      },
+      "privacy": {
+        "telemetry": false,
+        "offline_usable": true,
+        "cloud_sync_required": false
+      },
+      "self_hosting": {
+        "supported": true
+      },
+      "installation": {
+        "macOS": "brew install --cask jan",
+        "Windows": "winget install Jan.Jan",
+        "Linux": "snap install jan"
+      },
+      "replaces": [
+        {
+          "target": "chatgpt-desktop",
+          "migration_ease": "seamless",
+          "import_supported": true,
+          "notes": "Runs LLMs locally with full offline privacy and local OpenAI API server compatibility."
+        }
+      ],
+      "security": {
+        "verified_publisher": true,
+        "last_audit_date": "2026-08-01"
+      },
+      "health_status": "healthy"
+    },
+    {
+      "$schema": "https://raw.githubusercontent.com/awesome-mcp-dev-stack-selector/main/schema/app.schema.json",
+      "id": "k3s",
+      "name": "K3s",
+      "tagline": "Lightweight Kubernetes for Local & Edge Environments",
+      "description": "A lightweight, fully compliant Kubernetes distribution packaged as a single binary under 100MB.",
+      "website": "https://k3s.io",
+      "repository": "https://github.com/k3s-io/k3s",
+      "license_spdx": "Apache-2.0",
+      "category": "container-infra",
+      "tags": [
+        "kubernetes",
+        "k8s",
+        "container-orchestration",
+        "edge-computing",
+        "dev-environment"
+      ],
+      "capabilities": [
+        "container-orchestration",
+        "lightweight-runtime",
+        "self-hosting",
+        "offline-usable"
+      ],
+      "import_export_formats": [
+        ".yaml",
+        ".yml",
+        "helm-chart"
+      ],
+      "platforms": [
+        "macOS",
+        "Linux"
+      ],
+      "pricing": {
+        "model": "free_open_source",
+        "has_paid_tier": false
+      },
+      "privacy": {
+        "telemetry": false,
+        "offline_usable": true,
+        "cloud_sync_required": false
+      },
+      "self_hosting": {
+        "supported": true
+      },
+      "installation": {
+        "macOS": "brew install k3d",
+        "Linux": "curl -sfL https://get.k3s.io | sh -"
+      },
+      "replaces": [
+        {
+          "target": "docker-desktop",
+          "migration_ease": "moderate",
+          "import_supported": true,
+          "notes": "Lightweight local Kubernetes alternative to heavy desktop Docker/K8s runtimes."
+        }
+      ],
+      "security": {
+        "verified_publisher": true,
+        "last_audit_date": "2026-08-01"
+      },
+      "health_status": "healthy"
+    },
+    {
       "id": "lm-studio",
       "name": "LM Studio",
       "tagline": "Discover, download, and run local LLMs offline on Mac, Windows, and Linux",
@@ -338,6 +666,71 @@
       "security": {
         "verified_publisher": true,
         "last_audit_date": "2026-07-30"
+      },
+      "health_status": "healthy"
+    },
+    {
+      "$schema": "https://raw.githubusercontent.com/awesome-mcp-dev-stack-selector/main/schema/app.schema.json",
+      "id": "meilisearch",
+      "name": "Meilisearch",
+      "tagline": "Lightning-Fast Open Source Search Engine",
+      "description": "Ultra-fast, typo-tolerant, and open-source search engine designed for smooth instant search UI experiences.",
+      "website": "https://www.meilisearch.com",
+      "repository": "https://github.com/meilisearch/meilisearch",
+      "license_spdx": "MIT",
+      "category": "database-backend",
+      "tags": [
+        "search-engine",
+        "algolia-alternative",
+        "typo-tolerance",
+        "full-text-search"
+      ],
+      "capabilities": [
+        "self-hosting",
+        "full-text-search",
+        "typo-tolerance",
+        "vector-search"
+      ],
+      "import_export_formats": [
+        ".json",
+        ".ndjson",
+        ".csv"
+      ],
+      "platforms": [
+        "macOS",
+        "Windows",
+        "Linux"
+      ],
+      "pricing": {
+        "model": "free_open_source",
+        "has_paid_tier": true,
+        "paid_tier_description": "Meilisearch Cloud hosted tiers available"
+      },
+      "privacy": {
+        "telemetry": false,
+        "offline_usable": true,
+        "cloud_sync_required": false
+      },
+      "self_hosting": {
+        "supported": true,
+        "docker_compose": true
+      },
+      "installation": {
+        "macOS": "brew install meilisearch",
+        "Windows": "winget install Meilisearch.Meilisearch",
+        "Linux": "curl -L https://install.meilisearch.com | sh"
+      },
+      "replaces": [
+        {
+          "target": "algolia",
+          "migration_ease": "seamless",
+          "import_supported": true,
+          "notes": "Direct open-source replacement for Algolia with instant typo-tolerant search APIs."
+        }
+      ],
+      "security": {
+        "verified_publisher": true,
+        "last_audit_date": "2026-08-01"
       },
       "health_status": "healthy"
     },
@@ -403,6 +796,136 @@
       "security": {
         "verified_publisher": true,
         "last_audit_date": "2026-07-30"
+      },
+      "health_status": "healthy"
+    },
+    {
+      "$schema": "https://raw.githubusercontent.com/awesome-mcp-dev-stack-selector/main/schema/app.schema.json",
+      "id": "opentofu",
+      "name": "OpenTofu",
+      "tagline": "Open Source Infrastructure as Code Engine",
+      "description": "An open-source, community-driven fork of Terraform governed by the Linux Foundation for managing infrastructure as code.",
+      "website": "https://opentofu.org",
+      "repository": "https://github.com/opentofu/opentofu",
+      "license_spdx": "MPL-2.0",
+      "category": "container-infra",
+      "tags": [
+        "iac",
+        "terraform-alternative",
+        "infrastructure",
+        "devops",
+        "cloud-automation"
+      ],
+      "capabilities": [
+        "infrastructure-as-code",
+        "declarative-state",
+        "multi-cloud",
+        "offline-usable"
+      ],
+      "import_export_formats": [
+        ".tf",
+        ".tfstate",
+        ".hcl"
+      ],
+      "platforms": [
+        "macOS",
+        "Windows",
+        "Linux"
+      ],
+      "pricing": {
+        "model": "free_open_source",
+        "has_paid_tier": false
+      },
+      "privacy": {
+        "telemetry": false,
+        "offline_usable": true,
+        "cloud_sync_required": false
+      },
+      "self_hosting": {
+        "supported": true
+      },
+      "installation": {
+        "macOS": "brew install opentofu",
+        "Windows": "winget install OpenTofu.OpenTofu",
+        "Linux": "snap install --classic opentofu"
+      },
+      "replaces": [
+        {
+          "target": "terraform",
+          "migration_ease": "seamless",
+          "import_supported": true,
+          "notes": "Drop-in replacement for Terraform supporting existing state files and HCL configurations."
+        }
+      ],
+      "security": {
+        "verified_publisher": true,
+        "last_audit_date": "2026-08-01"
+      },
+      "health_status": "healthy"
+    },
+    {
+      "$schema": "https://raw.githubusercontent.com/awesome-mcp-dev-stack-selector/main/schema/app.schema.json",
+      "id": "penpot",
+      "name": "Penpot",
+      "tagline": "Open Source Design & Prototyping Platform",
+      "description": "The first open-source web-based design and prototyping tool built natively on open web standards (SVG, CSS Grid).",
+      "website": "https://penpot.app",
+      "repository": "https://github.com/penpot/penpot",
+      "license_spdx": "MPL-2.0",
+      "category": "design-media",
+      "tags": [
+        "design",
+        "figma-alternative",
+        "ui-ux",
+        "prototyping",
+        "vector-graphics"
+      ],
+      "capabilities": [
+        "self-hosting",
+        "web-based",
+        "vector-editing",
+        "prototyping",
+        "svg-native"
+      ],
+      "import_export_formats": [
+        ".svg",
+        ".penpot",
+        ".pdf",
+        ".png"
+      ],
+      "platforms": [
+        "macOS",
+        "Windows",
+        "Linux"
+      ],
+      "pricing": {
+        "model": "free_open_source",
+        "has_paid_tier": false
+      },
+      "privacy": {
+        "telemetry": false,
+        "offline_usable": true,
+        "cloud_sync_required": false
+      },
+      "self_hosting": {
+        "supported": true,
+        "docker_compose": true
+      },
+      "installation": {
+        "macOS": "docker run -it --rm penpot/backend:latest",
+        "Linux": "docker run -it --rm penpot/backend:latest"
+      },
+      "replaces": [
+        {
+          "target": "figma",
+          "migration_ease": "moderate",
+          "import_supported": true,
+          "notes": "Native SVG and CSS grid design tool built for seamless designer-developer collaboration."
+        }
+      ],
+      "security": {
+        "verified_publisher": true,
+        "last_audit_date": "2026-08-01"
       },
       "health_status": "healthy"
     },
@@ -532,6 +1055,203 @@
       "security": {
         "verified_publisher": true,
         "last_audit_date": "2026-07-30"
+      },
+      "health_status": "healthy"
+    },
+    {
+      "$schema": "https://raw.githubusercontent.com/awesome-mcp-dev-stack-selector/main/schema/app.schema.json",
+      "id": "supabase",
+      "name": "Supabase",
+      "tagline": "Open Source Firebase Alternative",
+      "description": "An open-source Firebase alternative providing Postgres database, Authentication, Instant APIs, Realtime subscriptions, Functions, and Storage.",
+      "website": "https://supabase.com",
+      "repository": "https://github.com/supabase/supabase",
+      "license_spdx": "Apache-2.0",
+      "category": "database-backend",
+      "tags": [
+        "baas",
+        "firebase-alternative",
+        "postgres",
+        "authentication",
+        "realtime",
+        "storage"
+      ],
+      "capabilities": [
+        "self-hosting",
+        "relational-database",
+        "realtime-subscriptions",
+        "authentication",
+        "vector-search"
+      ],
+      "import_export_formats": [
+        ".sql",
+        ".json",
+        "csv"
+      ],
+      "platforms": [
+        "macOS",
+        "Windows",
+        "Linux"
+      ],
+      "pricing": {
+        "model": "free_open_source",
+        "has_paid_tier": true,
+        "paid_tier_description": "Managed cloud hosted tiers available"
+      },
+      "privacy": {
+        "telemetry": false,
+        "offline_usable": true,
+        "cloud_sync_required": false
+      },
+      "self_hosting": {
+        "supported": true,
+        "docker_compose": true
+      },
+      "installation": {
+        "macOS": "brew install supabase/tap/supabase",
+        "Windows": "winget install Supabase.CLI",
+        "Linux": "npm install -g supabase"
+      },
+      "replaces": [
+        {
+          "target": "firebase",
+          "migration_ease": "moderate",
+          "import_supported": true,
+          "notes": "Provides relational Postgres alternative to Firestore NoSQL with built-in auth and realtime."
+        }
+      ],
+      "security": {
+        "verified_publisher": true,
+        "last_audit_date": "2026-08-01"
+      },
+      "health_status": "healthy"
+    },
+    {
+      "$schema": "https://raw.githubusercontent.com/awesome-mcp-dev-stack-selector/main/schema/app.schema.json",
+      "id": "surrealdb",
+      "name": "SurrealDB",
+      "tagline": "The Ultimate Multi-Model Cloud Database",
+      "description": "Multi-model database combining relational, document, graph, vector, and geospatial capabilities with SurrealQL.",
+      "website": "https://surrealdb.com",
+      "repository": "https://github.com/surrealdb/surrealdb",
+      "license_spdx": "BSL-1.1",
+      "category": "database-backend",
+      "tags": [
+        "database",
+        "multi-model",
+        "graph-database",
+        "vector-database",
+        "realtime"
+      ],
+      "capabilities": [
+        "self-hosting",
+        "graph-queries",
+        "vector-search",
+        "realtime-subscriptions",
+        "embedded-mode"
+      ],
+      "import_export_formats": [
+        ".surql",
+        ".json"
+      ],
+      "platforms": [
+        "macOS",
+        "Windows",
+        "Linux"
+      ],
+      "pricing": {
+        "model": "free_open_source",
+        "has_paid_tier": true,
+        "paid_tier_description": "Surreal Cloud managed service available"
+      },
+      "privacy": {
+        "telemetry": false,
+        "offline_usable": true,
+        "cloud_sync_required": false
+      },
+      "self_hosting": {
+        "supported": true,
+        "docker_compose": true
+      },
+      "installation": {
+        "macOS": "brew install surrealdb/tap/surreal",
+        "Windows": "winget install SurrealDB.Surreal",
+        "Linux": "curl -sSf https://install.surrealdb.com | sh"
+      },
+      "replaces": [
+        {
+          "target": "mongodb",
+          "migration_ease": "moderate",
+          "import_supported": true,
+          "notes": "Consolidates document, relational, graph, and vector database workloads into a single engine."
+        }
+      ],
+      "security": {
+        "verified_publisher": true,
+        "last_audit_date": "2026-08-01"
+      },
+      "health_status": "healthy"
+    },
+    {
+      "$schema": "https://raw.githubusercontent.com/awesome-mcp-dev-stack-selector/main/schema/app.schema.json",
+      "id": "valkey",
+      "name": "Valkey",
+      "tagline": "High-performance Open-Source In-Memory Data Store",
+      "description": "An open-source high-performance in-memory datastore created by former Redis core contributors under Linux Foundation.",
+      "website": "https://valkey.io",
+      "repository": "https://github.com/valkey-io/valkey",
+      "license_spdx": "BSD-3-Clause",
+      "category": "database-backend",
+      "tags": [
+        "key-value",
+        "in-memory",
+        "redis-alternative",
+        "cache",
+        "pub-sub"
+      ],
+      "capabilities": [
+        "self-hosting",
+        "in-memory-caching",
+        "pub-sub-messaging",
+        "high-availability"
+      ],
+      "import_export_formats": [
+        ".rdb",
+        ".aof"
+      ],
+      "platforms": [
+        "macOS",
+        "Windows",
+        "Linux"
+      ],
+      "pricing": {
+        "model": "free_open_source",
+        "has_paid_tier": false
+      },
+      "privacy": {
+        "telemetry": false,
+        "offline_usable": true,
+        "cloud_sync_required": false
+      },
+      "self_hosting": {
+        "supported": true,
+        "docker_compose": true
+      },
+      "installation": {
+        "macOS": "brew install valkey",
+        "Linux": "apt-get install valkey"
+      },
+      "replaces": [
+        {
+          "target": "redis",
+          "migration_ease": "seamless",
+          "import_supported": true,
+          "notes": "Drop-in open-source replacement for Redis supporting exact command set and protocol."
+        }
+      ],
+      "security": {
+        "verified_publisher": true,
+        "last_audit_date": "2026-08-01"
       },
       "health_status": "healthy"
     },

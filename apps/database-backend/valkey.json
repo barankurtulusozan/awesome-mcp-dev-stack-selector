@@ -1,0 +1,50 @@
+{
+  "$schema": "https://raw.githubusercontent.com/awesome-mcp-dev-stack-selector/main/schema/app.schema.json",
+  "id": "valkey",
+  "name": "Valkey",
+  "tagline": "High-performance Open-Source In-Memory Data Store",
+  "description": "An open-source high-performance in-memory datastore created by former Redis core contributors under Linux Foundation.",
+  "website": "https://valkey.io",
+  "repository": "https://github.com/valkey-io/valkey",
+  "license_spdx": "BSD-3-Clause",
+  "category": "database-backend",
+  "tags": ["key-value", "in-memory", "redis-alternative", "cache", "pub-sub"],
+  "capabilities": [
+    "self-hosting",
+    "in-memory-caching",
+    "pub-sub-messaging",
+    "high-availability"
+  ],
+  "import_export_formats": [".rdb", ".aof"],
+  "platforms": ["macOS", "Windows", "Linux"],
+  "pricing": {
+    "model": "free_open_source",
+    "has_paid_tier": false
+  },
+  "privacy": {
+    "telemetry": false,
+    "offline_usable": true,
+    "cloud_sync_required": false
+  },
+  "self_hosting": {
+    "supported": true,
+    "docker_compose": true
+  },
+  "installation": {
+    "macOS": "brew install valkey",
+    "Linux": "apt-get install valkey"
+  },
+  "replaces": [
+    {
+      "target": "redis",
+      "migration_ease": "seamless",
+      "import_supported": true,
+      "notes": "Drop-in open-source replacement for Redis supporting exact command set and protocol."
+    }
+  ],
+  "security": {
+    "verified_publisher": true,
+    "last_audit_date": "2026-08-01"
+  },
+  "health_status": "healthy"
+}

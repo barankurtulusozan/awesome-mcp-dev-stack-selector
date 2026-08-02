@@ -126,4 +126,112 @@ export function registerTools(server: any, cacheManager: CacheManager, searchEng
       };
     }
   );
+
+  // 4. Tool: compare_apps
+  server.tool(
+    'compare_apps',
+    {
+      app_id_1: { type: 'string', description: 'First app ID to compare (e.g., bruno)' },
+      app_id_2: { type: 'string', description: 'Second app ID to compare (e.g., hoppscotch)' }
+    },
+    async (args: any) => {
+      const registry = cacheManager.getRegistry();
+      const app1 = registry.apps.find(a => a.id.toLowerCase() === args.app_id_1.toLowerCase());
+      const app2 = registry.apps.find(a => a.id.toLowerCase() === args.app_id_2.toLowerCase());
+
+      if (!app1 || !app2) {
+        return {
+          isError: true,
+          content: [
+            {
+              type: 'text',
+              text: `One or both specified applications ("${args.app_id_1}", "${args.app_id_2}") were not found in the registry.`
+            }
+          ]
+        };
+      }
+
+      const commonCapabilities = app1.capabilities.filter(c => app2.capabilities.includes(c));
+      const app1UniqueCaps = app1.capabilities.filter(c => !app2.capabilities.includes(c));
+      const app2UniqueCaps = app2.capabilities.filter(c => !app1.capabilities.includes(c));
+
+      const comparison = {
+        app_1: {
+          id: app1.id,
+          name: app1.name,
+          license: app1.license_spdx,
+          category: app1.category,
+          pricing: app1.pricing,
+          offline_usable: app1.privacy?.offline_usable,
+          self_hosting: app1.self_hosting?.supported,
+          unique_capabilities: app1UniqueCaps
+        },
+        app_2: {
+          id: app2.id,
+          name: app2.name,
+          license: app2.license_spdx,
+          category: app2.category,
+          pricing: app2.pricing,
+          offline_usable: app2.privacy?.offline_usable,
+          self_hosting: app2.self_hosting?.supported,
+          unique_capabilities: app2UniqueCaps
+        },
+        shared_capabilities: commonCapabilities
+      };
+
+      return {
+        content: [
+          {
+            type: 'text',
+            text: JSON.stringify(comparison, null, 2)
+          }
+        ]
+      };
+    }
+  );
+
+  // 5. Tool: audit_manifest
+  server.tool(
+    'audit_manifest',
+    {
+      manifest_content: { type: 'string', description: 'Raw content of configuration file (e.g. package.json, docker-compose.yml, requirements.txt)' },
+      manifest_type: { type: 'string', description: 'Optional manifest type indicator (e.g. package.json, docker-compose, env)' }
+    },
+    async (args: any) => {
+      const registry = cacheManager.getRegistry();
+      const content = args.manifest_content.toLowerCase();
+      const detectedReplacements: any[] = [];
+
+      for (const app of registry.apps) {
+        if (!app.replaces) continue;
+        for (const rep of app.replaces) {
+          const target = rep.target.toLowerCase();
+          if (content.includes(target)) {
+            detectedReplacements.push({
+              detected_target: target,
+              recommended_foss_app: app.name,
+              app_id: app.id,
+              license: app.license_spdx,
+              migration_ease: rep.migration_ease,
+              import_supported: rep.import_supported,
+              installation: app.installation
+            });
+          }
+        }
+      }
+
+      return {
+        content: [
+          {
+            type: 'text',
+            text: JSON.stringify({
+              manifest_type: args.manifest_type || 'auto-detected',
+              total_audited_targets: detectedReplacements.length,
+              recommendations: detectedReplacements
+            }, null, 2)
+          }
+        ]
+      };
+    }
+  );
 }

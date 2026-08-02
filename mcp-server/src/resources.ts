@@ -70,4 +70,28 @@ export function registerResources(server: any, cacheManager: CacheManager) {
       };
     }
   );
+
+  // Resource 4: FOSS alternatives lookup resource by commercial app target
+  server.resource(
+    'alternatives-lookup',
+    'devstack://alternatives/{paid_tool}',
+    async (uri: any, params: { paid_tool: string }) => {
+      const registry = cacheManager.getRegistry();
+      const targetQuery = params.paid_tool.toLowerCase().trim();
+
+      const matches = registry.apps.filter(app => 
+        app.replaces?.some(r => r.target.toLowerCase() === targetQuery || r.target.toLowerCase().includes(targetQuery))
+      );
+
+      return {
+        contents: [
+          {
+            uri: uri.href,
+            mimeType: 'application/json',
+            text: JSON.stringify({ target: params.paid_tool, count: matches.length, apps: matches }, null, 2)
+          }
+        ]
+      };
+    }
+  );
 }

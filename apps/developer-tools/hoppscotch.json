@@ -1,0 +1,53 @@
+{
+  "$schema": "https://raw.githubusercontent.com/awesome-mcp-dev-stack-selector/main/schema/app.schema.json",
+  "id": "hoppscotch",
+  "name": "Hoppscotch",
+  "tagline": "Open Source API Development Ecosystem",
+  "description": "Lightweight, web-first and desktop API development suite for REST, GraphQL, WebSocket, Socket.IO, and SSE testing.",
+  "website": "https://hoppscotch.io",
+  "repository": "https://github.com/hoppscotch/hoppscotch",
+  "license_spdx": "MIT",
+  "category": "developer-tools",
+  "tags": ["api-client", "postman-alternative", "rest", "graphql", "websocket"],
+  "capabilities": [
+    "self-hosting",
+    "web-based",
+    "graphql-client",
+    "websocket-testing",
+    "environment-variables"
+  ],
+  "import_export_formats": [".json", "postman-collection-v2", "openapi-spec"],
+  "platforms": ["macOS", "Windows", "Linux"],
+  "pricing": {
+    "model": "free_open_source",
+    "has_paid_tier": true,
+    "paid_tier_description": "Hoppscotch Enterprise self-hosted tier available"
+  },
+  "privacy": {
+    "telemetry": false,
+    "offline_usable": true,
+    "cloud_sync_required": false
+  },
+  "self_hosting": {
+    "supported": true,
+    "docker_compose": true
+  },
+  "installation": {
+    "macOS": "brew install --cask hoppscotch",
+    "Windows": "winget install Hoppscotch.Hoppscotch",
+    "Linux": "snap install hoppscotch"
+  },
+  "replaces": [
+    {
+      "target": "postman",
+      "migration_ease": "seamless",
+      "import_supported": true,
+      "notes": "Seamless import of Postman collections with multi-protocol support including WebSockets."
+    }
+  ],
+  "security": {
+    "verified_publisher": true,
+    "last_audit_date": "2026-08-01"
+  },
+  "health_status": "healthy"
+}

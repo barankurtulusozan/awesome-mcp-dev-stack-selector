@@ -1,0 +1,53 @@
+{
+  "$schema": "https://raw.githubusercontent.com/awesome-mcp-dev-stack-selector/main/schema/app.schema.json",
+  "id": "supabase",
+  "name": "Supabase",
+  "tagline": "Open Source Firebase Alternative",
+  "description": "An open-source Firebase alternative providing Postgres database, Authentication, Instant APIs, Realtime subscriptions, Functions, and Storage.",
+  "website": "https://supabase.com",
+  "repository": "https://github.com/supabase/supabase",
+  "license_spdx": "Apache-2.0",
+  "category": "database-backend",
+  "tags": ["baas", "firebase-alternative", "postgres", "authentication", "realtime", "storage"],
+  "capabilities": [
+    "self-hosting",
+    "relational-database",
+    "realtime-subscriptions",
+    "authentication",
+    "vector-search"
+  ],
+  "import_export_formats": [".sql", ".json", "csv"],
+  "platforms": ["macOS", "Windows", "Linux"],
+  "pricing": {
+    "model": "free_open_source",
+    "has_paid_tier": true,
+    "paid_tier_description": "Managed cloud hosted tiers available"
+  },
+  "privacy": {
+    "telemetry": false,
+    "offline_usable": true,
+    "cloud_sync_required": false
+  },
+  "self_hosting": {
+    "supported": true,
+    "docker_compose": true
+  },
+  "installation": {
+    "macOS": "brew install supabase/tap/supabase",
+    "Windows": "winget install Supabase.CLI",
+    "Linux": "npm install -g supabase"
+  },
+  "replaces": [
+    {
+      "target": "firebase",
+      "migration_ease": "moderate",
+      "import_supported": true,
+      "notes": "Provides relational Postgres alternative to Firestore NoSQL with built-in auth and realtime."
+    }
+  ],
+  "security": {
+    "verified_publisher": true,
+    "last_audit_date": "2026-08-01"
+  },
+  "health_status": "healthy"
+}

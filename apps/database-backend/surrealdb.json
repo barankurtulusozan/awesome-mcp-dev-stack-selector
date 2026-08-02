@@ -1,0 +1,53 @@
+{
+  "$schema": "https://raw.githubusercontent.com/awesome-mcp-dev-stack-selector/main/schema/app.schema.json",
+  "id": "surrealdb",
+  "name": "SurrealDB",
+  "tagline": "The Ultimate Multi-Model Cloud Database",
+  "description": "Multi-model database combining relational, document, graph, vector, and geospatial capabilities with SurrealQL.",
+  "website": "https://surrealdb.com",
+  "repository": "https://github.com/surrealdb/surrealdb",
+  "license_spdx": "BSL-1.1",
+  "category": "database-backend",
+  "tags": ["database", "multi-model", "graph-database", "vector-database", "realtime"],
+  "capabilities": [
+    "self-hosting",
+    "graph-queries",
+    "vector-search",
+    "realtime-subscriptions",
+    "embedded-mode"
+  ],
+  "import_export_formats": [".surql", ".json"],
+  "platforms": ["macOS", "Windows", "Linux"],
+  "pricing": {
+    "model": "free_open_source",
+    "has_paid_tier": true,
+    "paid_tier_description": "Surreal Cloud managed service available"
+  },
+  "privacy": {
+    "telemetry": false,
+    "offline_usable": true,
+    "cloud_sync_required": false
+  },
+  "self_hosting": {
+    "supported": true,
+    "docker_compose": true
+  },
+  "installation": {
+    "macOS": "brew install surrealdb/tap/surreal",
+    "Windows": "winget install SurrealDB.Surreal",
+    "Linux": "curl -sSf https://install.surrealdb.com | sh"
+  },
+  "replaces": [
+    {
+      "target": "mongodb",
+      "migration_ease": "moderate",
+      "import_supported": true,
+      "notes": "Consolidates document, relational, graph, and vector database workloads into a single engine."
+    }
+  ],
+  "security": {
+    "verified_publisher": true,
+    "last_audit_date": "2026-08-01"
+  },
+  "health_status": "healthy"
+}

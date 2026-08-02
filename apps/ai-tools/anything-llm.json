@@ -1,0 +1,53 @@
+{
+  "$schema": "https://raw.githubusercontent.com/awesome-mcp-dev-stack-selector/main/schema/app.schema.json",
+  "id": "anything-llm",
+  "name": "AnythingLLM",
+  "tagline": "Full-Stack Desktop AI Assistant & Local RAG",
+  "description": "All-in-one desktop AI application that turns your documents into context for any local or hosted LLM with full privacy.",
+  "website": "https://anythingllm.com",
+  "repository": "https://github.com/Mintplex-Labs/anything-llm",
+  "license_spdx": "MIT",
+  "category": "ai-tools",
+  "tags": ["local-rag", "document-chat", "vector-database", "ai-workspace", "agent-tools"],
+  "capabilities": [
+    "local-llm",
+    "document-indexing",
+    "vector-search",
+    "multi-user-support",
+    "offline-usable"
+  ],
+  "import_export_formats": [".pdf", ".docx", ".txt", ".md", ".json"],
+  "platforms": ["macOS", "Windows", "Linux"],
+  "pricing": {
+    "model": "free_open_source",
+    "has_paid_tier": true,
+    "paid_tier_description": "AnythingLLM Cloud hosted enterprise tier available"
+  },
+  "privacy": {
+    "telemetry": false,
+    "offline_usable": true,
+    "cloud_sync_required": false
+  },
+  "self_hosting": {
+    "supported": true,
+    "docker_compose": true
+  },
+  "installation": {
+    "macOS": "brew install --cask anythingllm",
+    "Windows": "winget install MintplexLabs.AnythingLLM",
+    "Linux": "docker run -p 3001:3001 mintplexlabs/anythingllm"
+  },
+  "replaces": [
+    {
+      "target": "custom-gpt",
+      "migration_ease": "seamless",
+      "import_supported": true,
+      "notes": "Self-hosted RAG pipeline over local PDF, DOCX, and text repositories."
+    }
+  ],
+  "security": {
+    "verified_publisher": true,
+    "last_audit_date": "2026-08-01"
+  },
+  "health_status": "healthy"
+}

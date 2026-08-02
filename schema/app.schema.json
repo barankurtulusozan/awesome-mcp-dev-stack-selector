@@ -20,6 +20,10 @@
     "installation"
   ],
   "properties": {
+    "$schema": {
+      "type": "string",
+      "description": "JSON schema reference"
+    },
     "id": {
       "type": "string",
       "pattern": "^[a-z0-9-]+$",
@@ -61,7 +65,8 @@
         "design-media",
         "productivity",
         "security-networking",
-        "database-analytics"
+        "database-analytics",
+        "database-backend"
       ]
     },
     "tags": {
@@ -134,6 +139,9 @@
       "type": "object",
       "properties": {
         "supported": {
+          "type": "boolean"
+        },
+        "docker_compose": {
           "type": "boolean"
         },
         "docker_image": {

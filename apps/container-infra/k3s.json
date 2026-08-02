@@ -1,0 +1,49 @@
+{
+  "$schema": "https://raw.githubusercontent.com/awesome-mcp-dev-stack-selector/main/schema/app.schema.json",
+  "id": "k3s",
+  "name": "K3s",
+  "tagline": "Lightweight Kubernetes for Local & Edge Environments",
+  "description": "A lightweight, fully compliant Kubernetes distribution packaged as a single binary under 100MB.",
+  "website": "https://k3s.io",
+  "repository": "https://github.com/k3s-io/k3s",
+  "license_spdx": "Apache-2.0",
+  "category": "container-infra",
+  "tags": ["kubernetes", "k8s", "container-orchestration", "edge-computing", "dev-environment"],
+  "capabilities": [
+    "container-orchestration",
+    "lightweight-runtime",
+    "self-hosting",
+    "offline-usable"
+  ],
+  "import_export_formats": [".yaml", ".yml", "helm-chart"],
+  "platforms": ["macOS", "Linux"],
+  "pricing": {
+    "model": "free_open_source",
+    "has_paid_tier": false
+  },
+  "privacy": {
+    "telemetry": false,
+    "offline_usable": true,
+    "cloud_sync_required": false
+  },
+  "self_hosting": {
+    "supported": true
+  },
+  "installation": {
+    "macOS": "brew install k3d",
+    "Linux": "curl -sfL https://get.k3s.io | sh -"
+  },
+  "replaces": [
+    {
+      "target": "docker-desktop",
+      "migration_ease": "moderate",
+      "import_supported": true,
+      "notes": "Lightweight local Kubernetes alternative to heavy desktop Docker/K8s runtimes."
+    }
+  ],
+  "security": {
+    "verified_publisher": true,
+    "last_audit_date": "2026-08-01"
+  },
+  "health_status": "healthy"
+}

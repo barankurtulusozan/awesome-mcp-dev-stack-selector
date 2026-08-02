@@ -1,0 +1,52 @@
+{
+  "$schema": "https://raw.githubusercontent.com/awesome-mcp-dev-stack-selector/main/schema/app.schema.json",
+  "id": "meilisearch",
+  "name": "Meilisearch",
+  "tagline": "Lightning-Fast Open Source Search Engine",
+  "description": "Ultra-fast, typo-tolerant, and open-source search engine designed for smooth instant search UI experiences.",
+  "website": "https://www.meilisearch.com",
+  "repository": "https://github.com/meilisearch/meilisearch",
+  "license_spdx": "MIT",
+  "category": "database-backend",
+  "tags": ["search-engine", "algolia-alternative", "typo-tolerance", "full-text-search"],
+  "capabilities": [
+    "self-hosting",
+    "full-text-search",
+    "typo-tolerance",
+    "vector-search"
+  ],
+  "import_export_formats": [".json", ".ndjson", ".csv"],
+  "platforms": ["macOS", "Windows", "Linux"],
+  "pricing": {
+    "model": "free_open_source",
+    "has_paid_tier": true,
+    "paid_tier_description": "Meilisearch Cloud hosted tiers available"
+  },
+  "privacy": {
+    "telemetry": false,
+    "offline_usable": true,
+    "cloud_sync_required": false
+  },
+  "self_hosting": {
+    "supported": true,
+    "docker_compose": true
+  },
+  "installation": {
+    "macOS": "brew install meilisearch",
+    "Windows": "winget install Meilisearch.Meilisearch",
+    "Linux": "curl -L https://install.meilisearch.com | sh"
+  },
+  "replaces": [
+    {
+      "target": "algolia",
+      "migration_ease": "seamless",
+      "import_supported": true,
+      "notes": "Direct open-source replacement for Algolia with instant typo-tolerant search APIs."
+    }
+  ],
+  "security": {
+    "verified_publisher": true,
+    "last_audit_date": "2026-08-01"
+  },
+  "health_status": "healthy"
+}

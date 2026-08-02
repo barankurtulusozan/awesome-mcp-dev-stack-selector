@@ -1,9 +1,11 @@
 import assert from 'assert';
 import { CacheManager } from './cache-manager.js';
 import { SearchEngine } from './search-engine.js';
+import { runSearchEngineTests } from './search-engine.test.js';
 
 async function runTests() {
   console.log('🧪 Starting MCP Server Unit & Capability Integration Tests...\n');
+  runSearchEngineTests();
 
   // Test 1: CacheManager
   const cacheManager = new CacheManager();
@@ -38,7 +40,33 @@ async function runTests() {
   assert.strictEqual(brunoApp.security?.verified_publisher, true);
   console.log(`✅ Test 5 Passed: App entity lookup and schema properties verified.`);
 
-  console.log('\n🎉 All 5 MCP Server integration test cases PASSED successfully!');
+  // Test 6: Verify App Comparison logic
+  const hoppscotchApp = registry.apps.find(a => a.id === 'hoppscotch');
+  assert(hoppscotchApp !== undefined, 'Hoppscotch entry must exist');
+  const sharedCaps = brunoApp.capabilities.filter(c => hoppscotchApp.capabilities.includes(c));
+  assert(sharedCaps.length > 0, 'Bruno and Hoppscotch should share capabilities');
+  console.log(`✅ Test 6 Passed: App comparison logic verified (${sharedCaps.length} shared capabilities).`);
+
+  // Test 7: Verify Manifest Audit scanning logic
+  const sampleManifest = `
+    dependencies:
+      firebase: "^9.0.0"
+      redis: "^4.0.0"
+      postman: "^1.0.0"
+  `;
+  const auditMatches: string[] = [];
+  for (const app of registry.apps) {
+    if (!app.replaces) continue;
+    for (const rep of app.replaces) {
+      if (sampleManifest.toLowerCase().includes(rep.target.toLowerCase())) {
+        auditMatches.push(app.name);
+      }
+    }
+  }
+  assert(auditMatches.length >= 3, 'Audit manifest should detect Firebase, Redis, and Postman replacements');
+  console.log(`✅ Test 7 Passed: Manifest audit detected ${auditMatches.length} FOSS replacements.`);
+
+  console.log('\n🎉 All 7 MCP Server integration test cases PASSED successfully!');
   
   // Explicitly exit process to prevent hanging event loops in CI
   process.exit(0);

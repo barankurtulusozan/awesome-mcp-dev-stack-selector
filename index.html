@@ -24,7 +24,8 @@
       </a>
       <nav class="nav-links">
         <a href="#catalog" class="nav-link">Catalog</a>
-        <a href="#finder" class="nav-link">FOSS Alternative Finder</a>
+        <a href="#finder" class="nav-link">FOSS Finder</a>
+        <a href="#stack-builder" class="nav-link">Stack Exporter</a>
         <a href="#mcp-simulator" class="nav-link">MCP Playground</a>
         <a href="#quickstart" class="nav-link btn-nav">Add to AI Agent</a>
       </nav>
@@ -152,6 +153,44 @@
     </div>
   </section>
 
+  <!-- Interactive Dev Stack Builder & Exporter Section -->
+  <section id="stack-builder" class="stack-builder-section">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="tag-badge">1-Click Dev Environment</span>
+        <h2>FOSS Dev Stack Builder & Script Exporter</h2>
+        <p>Select your favorite FOSS tools to generate a 1-click install script or Docker Compose manifest</p>
+      </div>
+
+      <div class="stack-builder-card">
+        <div class="stack-options-row">
+          <div class="stack-platform-selector">
+            <label>Target Platform:</label>
+            <select id="export-platform">
+              <option value="macOS">macOS (Homebrew / Cask)</option>
+              <option value="Windows">Windows (Winget)</option>
+              <option value="Linux">Linux (Snap / Apt)</option>
+              <option value="Docker">Docker Compose Manifest</option>
+            </select>
+          </div>
+          <button id="btn-generate-stack" class="btn btn-primary">⚡ Generate 1-Click Installer Script</button>
+        </div>
+
+        <div id="stack-app-picker" class="stack-picker-grid">
+          <!-- Rendered dynamically by app.js -->
+        </div>
+
+        <div id="stack-script-preview" class="stack-preview-box hidden">
+          <div class="terminal-header">
+            <span id="stack-preview-title" class="terminal-title">install-stack.sh</span>
+            <button id="btn-copy-stack" class="btn btn-secondary btn-sm">📋 Copy Script</button>
+          </div>
+          <pre id="stack-script-code" class="terminal-body"><code></code></pre>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Interactive MCP Playground Simulator -->
   <section id="mcp-simulator" class="simulator-section">
     <div class="container">
@@ -165,10 +204,12 @@
         <div class="playground-panel">
           <h3>1. Select MCP Tool / Surface</h3>
           <div class="mcp-method-selector">
-            <button class="mcp-tab active" data-method="search_free_apps">Tool: search_free_apps</button>
-            <button class="mcp-tab" data-method="find_foss_alternative">Tool: find_foss_alternative</button>
-            <button class="mcp-tab" data-method="get_app_details">Tool: get_app_details</button>
-            <button class="mcp-tab" data-method="resource_registry">Resource: devstack://registry</button>
+            <button class="mcp-tab active" data-method="search_free_apps">search_free_apps</button>
+            <button class="mcp-tab" data-method="find_foss_alternative">find_foss_alternative</button>
+            <button class="mcp-tab" data-method="compare_apps">compare_apps</button>
+            <button class="mcp-tab" data-method="audit_manifest">audit_manifest</button>
+            <button class="mcp-tab" data-method="get_app_details">get_app_details</button>
+            <button class="mcp-tab" data-method="resource_registry">devstack://registry</button>
           </div>
 
           <div class="mcp-params-form" id="mcp-params-form">
@@ -233,6 +274,19 @@
       </div>
     </div>
   </footer>
+
+  <!-- App Comparison Overlay Modal -->
+  <div id="comparison-modal" class="modal-overlay hidden">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>App Comparison Matrix</h3>
+        <button id="close-modal" class="btn-close">✕</button>
+      </div>
+      <div id="modal-body" class="modal-body">
+        <!-- Rendered dynamically by app.js -->
+      </div>
+    </div>
+  </div>
 
   <script src="app.js"></script>
 </body>

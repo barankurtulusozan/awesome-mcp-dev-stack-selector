@@ -1,0 +1,50 @@
+{
+  "$schema": "https://raw.githubusercontent.com/awesome-mcp-dev-stack-selector/main/schema/app.schema.json",
+  "id": "jan",
+  "name": "Jan",
+  "tagline": "Rethinking the AI Desktop Client",
+  "description": "An open-source alternative to ChatGPT that runs 100% offline on your computer with local GGUF models.",
+  "website": "https://jan.ai",
+  "repository": "https://github.com/janhq/jan",
+  "license_spdx": "AGPL-3.0",
+  "category": "ai-tools",
+  "tags": ["local-ai", "chatgpt-alternative", "offline-llm", "gguf", "privacy-first"],
+  "capabilities": [
+    "local-llm",
+    "offline-usable",
+    "openai-api-compatibility",
+    "model-management"
+  ],
+  "import_export_formats": [".gguf", ".json"],
+  "platforms": ["macOS", "Windows", "Linux"],
+  "pricing": {
+    "model": "free_open_source",
+    "has_paid_tier": false
+  },
+  "privacy": {
+    "telemetry": false,
+    "offline_usable": true,
+    "cloud_sync_required": false
+  },
+  "self_hosting": {
+    "supported": true
+  },
+  "installation": {
+    "macOS": "brew install --cask jan",
+    "Windows": "winget install Jan.Jan",
+    "Linux": "snap install jan"
+  },
+  "replaces": [
+    {
+      "target": "chatgpt-desktop",
+      "migration_ease": "seamless",
+      "import_supported": true,
+      "notes": "Runs LLMs locally with full offline privacy and local OpenAI API server compatibility."
+    }
+  ],
+  "security": {
+    "verified_publisher": true,
+    "last_audit_date": "2026-08-01"
+  },
+  "health_status": "healthy"
+}

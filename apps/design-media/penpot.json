@@ -1,0 +1,51 @@
+{
+  "$schema": "https://raw.githubusercontent.com/awesome-mcp-dev-stack-selector/main/schema/app.schema.json",
+  "id": "penpot",
+  "name": "Penpot",
+  "tagline": "Open Source Design & Prototyping Platform",
+  "description": "The first open-source web-based design and prototyping tool built natively on open web standards (SVG, CSS Grid).",
+  "website": "https://penpot.app",
+  "repository": "https://github.com/penpot/penpot",
+  "license_spdx": "MPL-2.0",
+  "category": "design-media",
+  "tags": ["design", "figma-alternative", "ui-ux", "prototyping", "vector-graphics"],
+  "capabilities": [
+    "self-hosting",
+    "web-based",
+    "vector-editing",
+    "prototyping",
+    "svg-native"
+  ],
+  "import_export_formats": [".svg", ".penpot", ".pdf", ".png"],
+  "platforms": ["macOS", "Windows", "Linux"],
+  "pricing": {
+    "model": "free_open_source",
+    "has_paid_tier": false
+  },
+  "privacy": {
+    "telemetry": false,
+    "offline_usable": true,
+    "cloud_sync_required": false
+  },
+  "self_hosting": {
+    "supported": true,
+    "docker_compose": true
+  },
+  "installation": {
+    "macOS": "docker run -it --rm penpot/backend:latest",
+    "Linux": "docker run -it --rm penpot/backend:latest"
+  },
+  "replaces": [
+    {
+      "target": "figma",
+      "migration_ease": "moderate",
+      "import_supported": true,
+      "notes": "Native SVG and CSS grid design tool built for seamless designer-developer collaboration."
+    }
+  ],
+  "security": {
+    "verified_publisher": true,
+    "last_audit_date": "2026-08-01"
+  },
+  "health_status": "healthy"
+}

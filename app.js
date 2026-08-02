@@ -24,6 +24,7 @@ async function initApp() {
   if (statElem) statElem.textContent = totalApps;
 
   renderCatalog();
+  renderStackPicker();
   setupEventListeners();
   renderFossFinder('postman');
   renderMcpForm('search_free_apps');
@@ -247,6 +248,25 @@ function renderMcpForm(method) {
       </div>
     `;
   } else if (method === 'get_app_details') {
+  } else if (method === 'compare_apps') {
+    form.innerHTML = `
+      <div class="param-input-group">
+        <label>app_id_1 (string)</label>
+        <input type="text" id="mcp-p-app1" value="bruno">
+      </div>
+      <div class="param-input-group">
+        <label>app_id_2 (string)</label>
+        <input type="text" id="mcp-p-app2" value="hoppscotch">
+      </div>
+    `;
+  } else if (method === 'audit_manifest') {
+    form.innerHTML = `
+      <div class="param-input-group">
+        <label>manifest_content (string)</label>
+        <textarea id="mcp-p-manifest" rows="3" style="width:100%; background:var(--bg-dark); color:#fff; border:1px solid var(--border-color); border-radius:6px; padding:8px;">dependencies:\n  postman: "^2.0.0"\n  firebase: "^9.0.0"\n  redis: "^4.0.0"</textarea>
+      </div>
+    `;
+  } else if (method === 'get_app_details') {
     form.innerHTML = `
       <div class="param-input-group">
         <label>app_id (string)</label>
@@ -302,7 +322,7 @@ function executeMcpSimulation() {
     };
   } else if (selectedMcpMethod === 'find_foss_alternative') {
     const paid = document.getElementById('mcp-p-paid')?.value.toLowerCase() || '';
-    const matches = (registryData.apps || []).filter(a => a.replaces?.some(r => r.target.toLowerCase() === paid));
+    const matches = (registryData.apps || []).filter(a => a.replaces?.some(r => r.target.toLowerCase() === paid || r.target.toLowerCase().includes(paid)));
 
     resultObj = {
       content: [
@@ -321,6 +341,49 @@ function executeMcpSimulation() {
           }, null, 2)
         }
       ]
+    };
+  } else if (selectedMcpMethod === 'compare_apps') {
+    const id1 = document.getElementById('mcp-p-app1')?.value.toLowerCase() || '';
+    const id2 = document.getElementById('mcp-p-app2')?.value.toLowerCase() || '';
+    const app1 = (registryData.apps || []).find(a => a.id === id1);
+    const app2 = (registryData.apps || []).find(a => a.id === id2);
+
+    if (app1 && app2) {
+      const common = app1.capabilities.filter(c => app2.capabilities.includes(c));
+      resultObj = {
+        content: [{
+          type: 'text',
+          text: JSON.stringify({
+            app_1: { id: app1.id, name: app1.name, license: app1.license_spdx, category: app1.category },
+            app_2: { id: app2.id, name: app2.name, license: app2.license_spdx, category: app2.category },
+            shared_capabilities: common
+          }, null, 2)
+        }]
+      };
+    } else {
+      resultObj = { isError: true, text: 'One or both apps not found' };
+    }
+  } else if (selectedMcpMethod === 'audit_manifest') {
+    const raw = document.getElementById('mcp-p-manifest')?.value.toLowerCase() || '';
+    const recommendations = [];
+    for (const app of (registryData.apps || [])) {
+      if (!app.replaces) continue;
+      for (const rep of app.replaces) {
+        if (raw.includes(rep.target.toLowerCase())) {
+          recommendations.push({
+            detected_target: rep.target,
+            recommended_foss_app: app.name,
+            license: app.license_spdx,
+            installation: app.installation
+          });
+        }
+      }
+    }
+    resultObj = {
+      content: [{
+        type: 'text',
+        text: JSON.stringify({ total_audited_targets: recommendations.length, recommendations }, null, 2)
+      }]
     };
   } else if (selectedMcpMethod === 'get_app_details') {
     const id = document.getElementById('mcp-p-appid')?.value.toLowerCase() || '';
@@ -341,9 +404,97 @@ function executeMcpSimulation() {
   output.textContent = JSON.stringify(resultObj, null, 2);
 }
 
+function renderStackPicker() {
+  const picker = document.getElementById('stack-app-picker');
+  if (!picker) return;
+
+  picker.innerHTML = (registryData.apps || []).map(app => `
+    <div class="stack-picker-item">
+      <input type="checkbox" id="chk-app-${app.id}" value="${app.id}" checked>
+      <label for="chk-app-${app.id}">
+        <strong>${app.name}</strong> <span style="font-size:0.75rem; color:var(--text-muted);">(${app.category})</span>
+      </label>
+    </div>
+  `).join('');
+
+  document.getElementById('btn-generate-stack')?.addEventListener('click', generateStackScript);
+  document.getElementById('btn-copy-stack')?.addEventListener('click', () => {
+    const code = document.getElementById('stack-script-code').textContent;
+    navigator.clipboard.writeText(code).then(() => {
+      const btn = document.getElementById('btn-copy-stack');
+      btn.textContent = '✅ Copied!';
+      setTimeout(() => btn.textContent = '📋 Copy Script', 2000);
+    });
+  });
+}
+
+function generateStackScript() {
+  const platform = document.getElementById('export-platform').value;
+  const checkboxes = document.querySelectorAll('.stack-picker-item input[type="checkbox"]:checked');
+  const selectedIds = Array.from(checkboxes).map(c => c.value);
+  const selectedApps = (registryData.apps || []).filter(a => selectedIds.includes(a.id));
+
+  const previewBox = document.getElementById('stack-script-preview');
+  const previewTitle = document.getElementById('stack-preview-title');
+  const previewCode = document.getElementById('stack-script-code');
+  previewBox.classList.remove('hidden');
+
+  if (platform === 'macOS') {
+    previewTitle.textContent = 'install-stack.sh (macOS)';
+    const cmds = selectedApps.map(a => a.installation?.macOS).filter(Boolean);
+    previewCode.textContent = `#!/usr/bin/env bash\n# Automated 1-Click FOSS Dev Stack Installer (macOS)\necho "⚡ Installing selected FOSS dev stack..."\n\n${cmds.join('\n')}\n\necho "✅ Installation complete!"`;
+  } else if (platform === 'Windows') {
+    previewTitle.textContent = 'install-stack.ps1 (Windows)';
+    const cmds = selectedApps.map(a => a.installation?.Windows).filter(Boolean);
+    previewCode.textContent = `# Automated 1-Click FOSS Dev Stack Installer (Windows PowerShell)\nWrite-Host "⚡ Installing selected FOSS dev stack..." -ForegroundColor Green\n\n${cmds.join('\n')}\n\nWrite-Host "✅ Installation complete!" -ForegroundColor Green`;
+  } else if (platform === 'Linux') {
+    previewTitle.textContent = 'install-stack.sh (Linux)';
+    const cmds = selectedApps.map(a => a.installation?.Linux).filter(Boolean);
+    previewCode.textContent = `#!/usr/bin/env bash\n# Automated 1-Click FOSS Dev Stack Installer (Linux)\necho "⚡ Installing selected FOSS dev stack..."\n\n${cmds.join('\n')}\n\necho "✅ Installation complete!"`;
+  } else if (platform === 'Docker') {
+    previewTitle.textContent = 'docker-compose.yml';
+    const dockerApps = selectedApps.filter(a => a.self_hosting?.supported);
+    previewCode.textContent = `version: '3.8'\nservices:\n` + dockerApps.map(a => `  ${a.id}:\n    image: ${a.id}:latest\n    restart: unless-stopped`).join('\n\n');
+  }
+}
+
+function openComparisonModal(appId1, appId2) {
+  const modal = document.getElementById('comparison-modal');
+  const modalBody = document.getElementById('modal-body');
+  const app1 = (registryData.apps || []).find(a => a.id === appId1);
+  const app2 = (registryData.apps || []).find(a => a.id === appId2);
+
+  if (!app1 || !app2) return;
+
+  modalBody.innerHTML = `
+    <table class="comparison-table">
+      <thead>
+        <tr>
+          <th>Attribute</th>
+          <th>${app1.name}</th>
+          <th>${app2.name}</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>Category</strong></td><td>${app1.category}</td><td>${app2.category}</td></tr>
+        <tr><td><strong>License</strong></td><td>${app1.license_spdx}</td><td>${app2.license_spdx}</td></tr>
+        <tr><td><strong>Offline Usable</strong></td><td>${app1.privacy?.offline_usable ? '✅ Yes' : '❌ No'}</td><td>${app2.privacy?.offline_usable ? '✅ Yes' : '❌ No'}</td></tr>
+        <tr><td><strong>Self Hosting</strong></td><td>${app1.self_hosting?.supported ? '✅ Yes' : '❌ No'}</td><td>${app2.self_hosting?.supported ? '✅ Yes' : '❌ No'}</td></tr>
+        <tr><td><strong>Capabilities</strong></td><td>${app1.capabilities.join(', ')}</td><td>${app2.capabilities.join(', ')}</td></tr>
+        <tr><td><strong>Install (macOS)</strong></td><td><code>${app1.installation?.macOS || 'N/A'}</code></td><td><code>${app2.installation?.macOS || 'N/A'}</code></td></tr>
+      </tbody>
+    </table>
+  `;
+
+  modal.classList.remove('hidden');
+  document.getElementById('close-modal')?.addEventListener('click', () => {
+    modal.classList.add('hidden');
+  });
+}
+
 function getFallbackRegistry() {
   return {
-    meta: { version: "2.0.0", total_apps: 9 },
+    meta: { version: "2.0.0", total_apps: 20 },
     apps: [
       {
         id: "bruno",
@@ -360,22 +511,6 @@ function getFallbackRegistry() {
         privacy: { telemetry: false, offline_usable: true, cloud_sync_required: false },
         installation: { macOS: "brew install bruno", Windows: "winget install Bruno.Bruno" },
         replaces: [{ target: "postman", migration_ease: "seamless", import_supported: true }]
-      },
-      {
-        id: "ollama",
-        name: "Ollama",
-        tagline: "Run Llama 3, Mistral, and LLMs locally",
-        description: "Ollama allows you to run open-source large language models locally.",
-        website: "https://ollama.com",
-        license_spdx: "MIT",
-        category: "ai-tools",
-        tags: ["local-llm", "ai-inference"],
-        capabilities: ["local-llm", "openai-api", "gpu-acceleration"],
-        platforms: ["macOS", "Windows", "Linux"],
-        pricing: { model: "free_open_source", has_paid_tier: false },
-        privacy: { telemetry: false, offline_usable: true, cloud_sync_required: false },
-        installation: { macOS: "brew install ollama", Windows: "winget install Ollama.Ollama" },
-        replaces: [{ target: "openai-api", migration_ease: "seamless", import_supported: true }]
       }
     ]
   };

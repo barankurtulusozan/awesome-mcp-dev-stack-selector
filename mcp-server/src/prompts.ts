@@ -66,4 +66,32 @@ Explain why each tool was selected, list SPDX licenses, and provide one-line ins
       };
     }
   );
+
+  // Prompt 3: Compare two FOSS tools
+  server.prompt(
+    'compare_foss_tools',
+    {
+      app_id_1: { type: 'string', description: 'First app ID (e.g. bruno)' },
+      app_id_2: { type: 'string', description: 'Second app ID (e.g. hoppscotch)' }
+    },
+    (args: any) => {
+      return {
+        messages: [
+          {
+            role: 'user',
+            content: {
+              type: 'text',
+              text: `Please compare the open-source software tools "${args.app_id_1}" and "${args.app_id_2}".
+
+Use the \`compare_apps\` tool to fetch their architectural capabilities, license models, privacy settings, and installation methods. Provide a structured trade-off evaluation highlighting:
+1. Architectural differences and capabilities matrix
+2. License & self-hosting support
+3. Privacy & offline usability
+4. Final recommendation based on team size and deployment environment.`
+            }
+          }
+        ]
+      };
+    }
+  );
 }

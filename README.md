@@ -13,7 +13,7 @@
   <a href="https://github.com/awesome-mcp-dev-stack-selector/awesome-mcp-dev-stack-selector/actions"><img src="https://github.com/awesome-mcp-dev-stack-selector/awesome-mcp-dev-stack-selector/actions/workflows/validate-pr.yml/badge.svg" alt="Build & Validate"></a>
   <a href="https://modelcontextprotocol.io"><img src="https://img.shields.io/badge/MCP-Protocol--v1.0-6b4fbb.svg" alt="MCP Protocol v1.0"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License: MIT"></a>
-  <a href="#-apps-directory-9-verified-entries"><img src="https://img.shields.io/badge/FOSS--Apps-9-brightgreen.svg" alt="Apps Count"></a>
+  <a href="#-apps-directory-20-verified-entries"><img src="https://img.shields.io/badge/FOSS--Apps-20-brightgreen.svg" alt="Apps Count"></a>
 </p>
 
 ---
@@ -211,7 +211,7 @@ flowchart TD
 
 ---
 
-## 📚 Apps Directory (9 Verified Entries)
+## 📚 Apps Directory (20 Verified Entries)
 
 ### 🛠️ Developer Tools & IDEs
 
@@ -219,12 +219,15 @@ flowchart TD
 | --- | --- | --- | --- | --- | --- |
 | [**Bruno**](https://www.usebruno.com) | `MIT` | Fast, offline-first, Git-friendly open-source API client | `offline-editing` `git-versioning` `scripting` | ~postman~, ~insomnia~ | `brew install bruno` |
 | [**DBeaver Community**](https://dbeaver.io) | `Apache-2.0` | Free multi-platform database tool for developers and DBAs | `sql-editor` `schema-visualizer` `data-export` | ~datagrip~, ~navicat~ | `brew install dbeaver-community` |
+| [**Hoppscotch**](https://hoppscotch.io) | `MIT` | Open Source API Development Ecosystem | `self-hosting` `web-based` `graphql-client` | ~postman~ | `brew install --cask hoppscotch` |
 | [**VSCodium**](https://vscodium.com) | `MIT` | Free and open-source binaries of VS Code without telemetry or tracking | `extension-marketplace` `integrated-terminal` `git-integration` | ~vscode~ | `brew install vscodium` |
 
 ### 🤖 Local AI & LLM Tools
 
 | App | License | Tagline | Capabilities | Replaces | One-Line Install |
 | --- | --- | --- | --- | --- | --- |
+| [**AnythingLLM**](https://anythingllm.com) | `MIT` | Full-Stack Desktop AI Assistant & Local RAG | `local-llm` `document-indexing` `vector-search` | ~custom-gpt~ | `brew install --cask anythingllm` |
+| [**Jan**](https://jan.ai) | `AGPL-3.0` | Rethinking the AI Desktop Client | `local-llm` `offline-usable` `openai-api-compatibility` | ~chatgpt-desktop~ | `brew install --cask jan` |
 | [**LM Studio**](https://lmstudio.ai) | `Proprietary-Free` | Discover, download, and run local LLMs offline on Mac, Windows, and Linux | `local-llm` `gui-chat` `model-downloader` | ~chatgpt-desktop~ | `brew install lm-studio` |
 | [**Ollama**](https://ollama.com) | `MIT` | Get up and running with Llama 3, Mistral, and other large language models locally | `local-llm` `openai-api` `gpu-acceleration` | ~openai-api~ | `brew install ollama` |
 
@@ -232,6 +235,8 @@ flowchart TD
 
 | App | License | Tagline | Capabilities | Replaces | One-Line Install |
 | --- | --- | --- | --- | --- | --- |
+| [**K3s**](https://k3s.io) | `Apache-2.0` | Lightweight Kubernetes for Local & Edge Environments | `container-orchestration` `lightweight-runtime` `self-hosting` | ~docker-desktop~ | `brew install k3d` |
+| [**OpenTofu**](https://opentofu.org) | `MPL-2.0` | Open Source Infrastructure as Code Engine | `infrastructure-as-code` `declarative-state` `multi-cloud` | ~terraform~ | `brew install opentofu` |
 | [**PocketBase**](https://pocketbase.io) | `MIT` | Open Source backend in 1 file with real-time database, auth, and file storage | `realtime-subscriptions` `user-auth` `file-storage` | ~firebase~ | `brew install pocketbase` |
 | [**Podman**](https://podman.io) | `Apache-2.0` | Daemonless, rootless open-source container engine | `container-runtime` `rootless-containers` `pod-management` | ~docker-desktop~ | `brew install podman` |
 
@@ -241,6 +246,7 @@ flowchart TD
 | --- | --- | --- | --- | --- | --- |
 | [**GIMP**](https://www.gimp.org) | `GPL-3.0-or-later` | GNU Image Manipulation Program - Free & open source image editor | `raster-editing` `layer-management` `plugin-support` | ~photoshop~ | `brew install gimp` |
 | [**Inkscape**](https://inkscape.org) | `GPL-3.0-or-later` | Professional vector graphics editor for Linux, Windows and macOS | `vector-editing` `svg-native` `bezier-curves` | ~adobe-illustrator~ | `brew install inkscape` |
+| [**Penpot**](https://penpot.app) | `MPL-2.0` | Open Source Design & Prototyping Platform | `self-hosting` `web-based` `vector-editing` | ~figma~ | `docker run -it --rm penpot/backend:latest` |
 
 ---
 

@@ -1,0 +1,50 @@
+{
+  "$schema": "https://raw.githubusercontent.com/awesome-mcp-dev-stack-selector/main/schema/app.schema.json",
+  "id": "opentofu",
+  "name": "OpenTofu",
+  "tagline": "Open Source Infrastructure as Code Engine",
+  "description": "An open-source, community-driven fork of Terraform governed by the Linux Foundation for managing infrastructure as code.",
+  "website": "https://opentofu.org",
+  "repository": "https://github.com/opentofu/opentofu",
+  "license_spdx": "MPL-2.0",
+  "category": "container-infra",
+  "tags": ["iac", "terraform-alternative", "infrastructure", "devops", "cloud-automation"],
+  "capabilities": [
+    "infrastructure-as-code",
+    "declarative-state",
+    "multi-cloud",
+    "offline-usable"
+  ],
+  "import_export_formats": [".tf", ".tfstate", ".hcl"],
+  "platforms": ["macOS", "Windows", "Linux"],
+  "pricing": {
+    "model": "free_open_source",
+    "has_paid_tier": false
+  },
+  "privacy": {
+    "telemetry": false,
+    "offline_usable": true,
+    "cloud_sync_required": false
+  },
+  "self_hosting": {
+    "supported": true
+  },
+  "installation": {
+    "macOS": "brew install opentofu",
+    "Windows": "winget install OpenTofu.OpenTofu",
+    "Linux": "snap install --classic opentofu"
+  },
+  "replaces": [
+    {
+      "target": "terraform",
+      "migration_ease": "seamless",
+      "import_supported": true,
+      "notes": "Drop-in replacement for Terraform supporting existing state files and HCL configurations."
+    }
+  ],
+  "security": {
+    "verified_publisher": true,
+    "last_audit_date": "2026-08-01"
+  },
+  "health_status": "healthy"
+}

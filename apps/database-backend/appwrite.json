@@ -1,0 +1,53 @@
+{
+  "$schema": "https://raw.githubusercontent.com/awesome-mcp-dev-stack-selector/main/schema/app.schema.json",
+  "id": "appwrite",
+  "name": "Appwrite",
+  "tagline": "Secure Open Source Backend for Web, Mobile & Flutter Developers",
+  "description": "Self-hosted backend-as-a-service providing auth, databases, serverless functions, storage, and real-time messaging.",
+  "website": "https://appwrite.io",
+  "repository": "https://github.com/appwrite/appwrite",
+  "license_spdx": "BSD-3-Clause",
+  "category": "database-backend",
+  "tags": ["baas", "firebase-alternative", "backend", "authentication", "serverless", "databases"],
+  "capabilities": [
+    "self-hosting",
+    "authentication",
+    "storage-management",
+    "serverless-functions",
+    "realtime-events"
+  ],
+  "import_export_formats": [".json", ".csv"],
+  "platforms": ["macOS", "Windows", "Linux"],
+  "pricing": {
+    "model": "free_open_source",
+    "has_paid_tier": true,
+    "paid_tier_description": "Appwrite Cloud paid plans available"
+  },
+  "privacy": {
+    "telemetry": false,
+    "offline_usable": true,
+    "cloud_sync_required": false
+  },
+  "self_hosting": {
+    "supported": true,
+    "docker_compose": true
+  },
+  "installation": {
+    "macOS": "docker run -it --rm appwrite/appwrite:latest",
+    "Windows": "docker run -it --rm appwrite/appwrite:latest",
+    "Linux": "docker run -it --rm appwrite/appwrite:latest"
+  },
+  "replaces": [
+    {
+      "target": "firebase",
+      "migration_ease": "moderate",
+      "import_supported": true,
+      "notes": "Full end-to-end self-hosted BaaS alternative to Firebase and AWS Amplify."
+    }
+  ],
+  "security": {
+    "verified_publisher": true,
+    "last_audit_date": "2026-08-01"
+  },
+  "health_status": "healthy"
+}
