@@ -2,8 +2,8 @@
   "$schema": "https://raw.githubusercontent.com/awesome-mcp-dev-stack-selector/main/schema/app.schema.json",
   "meta": {
     "version": "2.0.0",
-    "total_apps": 20,
-    "last_updated": "2026-08-02T20:44:21.476Z",
+    "total_apps": 29,
+    "last_updated": "2026-08-02T23:05:13.745Z",
     "generator": "awesome-mcp-dev-stack-selector build-script"
   },
   "apps": [
@@ -140,6 +140,80 @@
       "security": {
         "verified_publisher": true,
         "last_audit_date": "2026-08-01"
+      },
+      "health_status": "healthy"
+    },
+    {
+      "id": "blender",
+      "name": "Blender",
+      "tagline": "Free and open-source 3D creation suite",
+      "description": "The industry-standard open-source 3D creation suite supporting modeling, sculpting, animation, rendering (Cycles/Eevee), compositing, motion tracking, video editing, and 2D animation (Grease Pencil).",
+      "website": "https://www.blender.org",
+      "repository": "https://github.com/blender/blender",
+      "license_spdx": "GPL-2.0-or-later",
+      "category": "design-media",
+      "tags": [
+        "3d-modeling",
+        "animation",
+        "rendering",
+        "video-editing",
+        "maya-alternative"
+      ],
+      "capabilities": [
+        "3d-modeling",
+        "animation-rigging",
+        "rendering-engine",
+        "video-editing",
+        "scripting"
+      ],
+      "import_export_formats": [
+        ".blend",
+        ".fbx",
+        ".obj",
+        ".gltf",
+        ".usd",
+        ".stl",
+        ".svg"
+      ],
+      "platforms": [
+        "macOS",
+        "Windows",
+        "Linux"
+      ],
+      "pricing": {
+        "model": "free_open_source",
+        "has_paid_tier": false
+      },
+      "privacy": {
+        "telemetry": false,
+        "offline_usable": true,
+        "cloud_sync_required": false
+      },
+      "self_hosting": {
+        "supported": false
+      },
+      "installation": {
+        "macOS": "brew install --cask blender",
+        "Windows": "winget install BlenderFoundation.Blender",
+        "Linux": "snap install blender"
+      },
+      "replaces": [
+        {
+          "target": "maya",
+          "migration_ease": "complex",
+          "import_supported": true,
+          "notes": "Full 3D pipeline replacement. FBX import from Maya. Steeper learning curve but comparable capabilities."
+        },
+        {
+          "target": "cinema4d",
+          "migration_ease": "complex",
+          "import_supported": true,
+          "notes": "Cycles renderer competitive with Redshift. Geometry Nodes replaces MoGraph workflows."
+        }
+      ],
+      "security": {
+        "verified_publisher": true,
+        "last_audit_date": "2026-08-02"
       },
       "health_status": "healthy"
     },
@@ -289,6 +363,61 @@
       "health_status": "healthy"
     },
     {
+      "id": "ghostty",
+      "name": "Ghostty",
+      "tagline": "Fast, feature-rich, cross-platform terminal emulator",
+      "description": "A GPU-accelerated terminal emulator that aims to be fast, feature-rich, and native. Uses platform-native UI and rendering with a focus on correctness and performance.",
+      "website": "https://ghostty.org",
+      "repository": "https://github.com/ghostty-org/ghostty",
+      "license_spdx": "MIT",
+      "category": "developer-tools",
+      "tags": [
+        "terminal",
+        "gpu-accelerated",
+        "iterm-alternative",
+        "cross-platform"
+      ],
+      "capabilities": [
+        "gpu-accelerated",
+        "native-rendering",
+        "ligature-support",
+        "cli-first"
+      ],
+      "import_export_formats": [],
+      "platforms": [
+        "macOS",
+        "Linux"
+      ],
+      "pricing": {
+        "model": "free_open_source",
+        "has_paid_tier": false
+      },
+      "privacy": {
+        "telemetry": false,
+        "offline_usable": true,
+        "cloud_sync_required": false
+      },
+      "self_hosting": {
+        "supported": false
+      },
+      "installation": {
+        "macOS": "brew install --cask ghostty"
+      },
+      "replaces": [
+        {
+          "target": "iterm2",
+          "migration_ease": "moderate",
+          "import_supported": false,
+          "notes": "GPU-rendered terminal with significantly lower latency and memory usage."
+        }
+      ],
+      "security": {
+        "verified_publisher": true,
+        "last_audit_date": "2026-08-02"
+      },
+      "health_status": "healthy"
+    },
+    {
       "id": "gimp",
       "name": "GIMP",
       "tagline": "GNU Image Manipulation Program - Free & open source image editor",
@@ -351,6 +480,67 @@
       "security": {
         "verified_publisher": true,
         "last_audit_date": "2026-07-30"
+      },
+      "health_status": "healthy"
+    },
+    {
+      "id": "gpt4all",
+      "name": "GPT4All",
+      "tagline": "Run Local LLMs on Any Hardware",
+      "description": "A free-to-use, locally running, privacy-aware desktop chatbot. No GPU required. Runs quantized models on consumer hardware with a simple installer.",
+      "website": "https://gpt4all.io",
+      "repository": "https://github.com/nomic-ai/gpt4all",
+      "license_spdx": "MIT",
+      "category": "ai-tools",
+      "tags": [
+        "local-llm",
+        "desktop-ai",
+        "privacy-first",
+        "no-gpu-required",
+        "chatgpt-alternative"
+      ],
+      "capabilities": [
+        "local-llm",
+        "offline-usable",
+        "model-management",
+        "document-indexing"
+      ],
+      "import_export_formats": [
+        ".gguf",
+        ".json"
+      ],
+      "platforms": [
+        "macOS",
+        "Windows",
+        "Linux"
+      ],
+      "pricing": {
+        "model": "free_open_source",
+        "has_paid_tier": false
+      },
+      "privacy": {
+        "telemetry": false,
+        "offline_usable": true,
+        "cloud_sync_required": false
+      },
+      "self_hosting": {
+        "supported": true
+      },
+      "installation": {
+        "macOS": "brew install --cask gpt4all",
+        "Windows": "winget install Nomic.GPT4All"
+      },
+      "replaces": [
+        {
+          "target": "chatgpt-desktop",
+          "migration_ease": "seamless",
+          "import_supported": false,
+          "notes": "Run LLMs locally without GPU requirement. CPU-optimized quantized models included."
+        }
+      ],
+      "security": {
+        "verified_publisher": true,
+        "last_audit_date": "2026-08-02"
       },
       "health_status": "healthy"
     },
@@ -612,6 +802,126 @@
       "health_status": "healthy"
     },
     {
+      "id": "lazygit",
+      "name": "LazyGit",
+      "tagline": "Simple terminal UI for git commands",
+      "description": "A simple terminal UI for git commands written in Go. Provides an intuitive visual interface for staging, committing, branching, merging, and resolving conflicts without memorizing complex git CLI syntax.",
+      "website": "https://github.com/jesseduffield/lazygit",
+      "repository": "https://github.com/jesseduffield/lazygit",
+      "license_spdx": "MIT",
+      "category": "developer-tools",
+      "tags": [
+        "git",
+        "terminal-ui",
+        "version-control",
+        "tui",
+        "developer-productivity"
+      ],
+      "capabilities": [
+        "git-versioning",
+        "interactive-rebase",
+        "conflict-resolution",
+        "cli-first"
+      ],
+      "import_export_formats": [],
+      "platforms": [
+        "macOS",
+        "Windows",
+        "Linux"
+      ],
+      "pricing": {
+        "model": "free_open_source",
+        "has_paid_tier": false
+      },
+      "privacy": {
+        "telemetry": false,
+        "offline_usable": true,
+        "cloud_sync_required": false
+      },
+      "self_hosting": {
+        "supported": false
+      },
+      "installation": {
+        "macOS": "brew install lazygit",
+        "Windows": "winget install JesseDuffield.Lazygit",
+        "Linux": "snap install lazygit"
+      },
+      "replaces": [
+        {
+          "target": "gitkraken",
+          "migration_ease": "seamless",
+          "import_supported": false,
+          "notes": "Terminal-native Git GUI alternative. Keyboard-driven, zero overhead."
+        }
+      ],
+      "security": {
+        "verified_publisher": true,
+        "last_audit_date": "2026-08-02"
+      },
+      "health_status": "healthy"
+    },
+    {
+      "id": "librechat",
+      "name": "LibreChat",
+      "tagline": "Enhanced ChatGPT Clone with Multi-Provider Support",
+      "description": "An open-source ChatGPT-style interface supporting multiple AI providers (OpenAI, Anthropic, Google, local models via Ollama). Features conversations, presets, plugins, and multi-user support.",
+      "website": "https://www.librechat.ai",
+      "repository": "https://github.com/danny-avila/LibreChat",
+      "license_spdx": "MIT",
+      "category": "ai-tools",
+      "tags": [
+        "chatgpt-alternative",
+        "multi-llm",
+        "self-hosted",
+        "ai-chat",
+        "ollama-frontend"
+      ],
+      "capabilities": [
+        "multi-provider-llm",
+        "self-hosting",
+        "plugin-system",
+        "multi-user-support"
+      ],
+      "import_export_formats": [
+        ".json"
+      ],
+      "platforms": [
+        "macOS",
+        "Windows",
+        "Linux"
+      ],
+      "pricing": {
+        "model": "free_open_source",
+        "has_paid_tier": false
+      },
+      "privacy": {
+        "telemetry": false,
+        "offline_usable": true,
+        "cloud_sync_required": false
+      },
+      "self_hosting": {
+        "supported": true,
+        "docker_compose": true
+      },
+      "installation": {
+        "macOS": "docker run -p 3080:3080 ghcr.io/danny-avila/librechat:latest",
+        "Linux": "docker run -p 3080:3080 ghcr.io/danny-avila/librechat:latest"
+      },
+      "replaces": [
+        {
+          "target": "chatgpt",
+          "migration_ease": "seamless",
+          "import_supported": true,
+          "notes": "ChatGPT conversation import supported. Connects to local Ollama or any OpenAI-compatible API."
+        }
+      ],
+      "security": {
+        "verified_publisher": true,
+        "last_audit_date": "2026-08-02"
+      },
+      "health_status": "healthy"
+    },
+    {
       "id": "lm-studio",
       "name": "LM Studio",
       "tagline": "Discover, download, and run local LLMs offline on Mac, Windows, and Linux",
@@ -666,6 +976,71 @@
       "security": {
         "verified_publisher": true,
         "last_audit_date": "2026-07-30"
+      },
+      "health_status": "healthy"
+    },
+    {
+      "id": "logseq",
+      "name": "Logseq",
+      "tagline": "Privacy-first, open-source knowledge management",
+      "description": "A privacy-first, open-source platform for knowledge management and collaboration. Uses a local-first, outliner-based approach with bidirectional linking, graph views, and Markdown/Org-mode files.",
+      "website": "https://logseq.com",
+      "repository": "https://github.com/logseq/logseq",
+      "license_spdx": "AGPL-3.0",
+      "category": "productivity",
+      "tags": [
+        "note-taking",
+        "knowledge-base",
+        "notion-alternative",
+        "outliner",
+        "graph-view"
+      ],
+      "capabilities": [
+        "offline-editing",
+        "bidirectional-linking",
+        "graph-visualization",
+        "plugin-system"
+      ],
+      "import_export_formats": [
+        ".md",
+        ".org",
+        ".json",
+        ".edn"
+      ],
+      "platforms": [
+        "macOS",
+        "Windows",
+        "Linux"
+      ],
+      "pricing": {
+        "model": "free_open_source",
+        "has_paid_tier": true,
+        "paid_tier_description": "Logseq Sync for encrypted cloud synchronization"
+      },
+      "privacy": {
+        "telemetry": false,
+        "offline_usable": true,
+        "cloud_sync_required": false
+      },
+      "self_hosting": {
+        "supported": false
+      },
+      "installation": {
+        "macOS": "brew install --cask logseq",
+        "Windows": "winget install Logseq.Logseq",
+        "Linux": "snap install logseq"
+      },
+      "replaces": [
+        {
+          "target": "notion",
+          "migration_ease": "moderate",
+          "import_supported": true,
+          "notes": "Local-first privacy alternative. Markdown-based with bidirectional links and graph views."
+        }
+      ],
+      "security": {
+        "verified_publisher": true,
+        "last_audit_date": "2026-08-02"
       },
       "health_status": "healthy"
     },
@@ -735,6 +1110,70 @@
       "health_status": "healthy"
     },
     {
+      "id": "obs-studio",
+      "name": "OBS Studio",
+      "tagline": "Free and open-source software for live streaming and recording",
+      "description": "Industry-standard open-source software for video recording and live streaming. Supports high-performance real-time video/audio capturing, scene composition, encoding, and broadcasting to platforms like Twitch, YouTube, and custom RTMP servers.",
+      "website": "https://obsproject.com",
+      "repository": "https://github.com/obsproject/obs-studio",
+      "license_spdx": "GPL-2.0-only",
+      "category": "design-media",
+      "tags": [
+        "streaming",
+        "screen-recording",
+        "broadcasting",
+        "video-capture",
+        "obs"
+      ],
+      "capabilities": [
+        "live-streaming",
+        "screen-recording",
+        "scene-composition",
+        "plugin-system"
+      ],
+      "import_export_formats": [
+        ".mkv",
+        ".mp4",
+        ".flv",
+        ".json"
+      ],
+      "platforms": [
+        "macOS",
+        "Windows",
+        "Linux"
+      ],
+      "pricing": {
+        "model": "free_open_source",
+        "has_paid_tier": false
+      },
+      "privacy": {
+        "telemetry": false,
+        "offline_usable": true,
+        "cloud_sync_required": false
+      },
+      "self_hosting": {
+        "supported": false
+      },
+      "installation": {
+        "macOS": "brew install --cask obs",
+        "Windows": "winget install OBSProject.OBSStudio",
+        "Linux": "snap install obs-studio"
+      },
+      "replaces": [
+        {
+          "target": "streamlabs",
+          "migration_ease": "seamless",
+          "import_supported": true,
+          "notes": "Streamlabs is itself a fork of OBS. Scene collection export/import fully compatible."
+        }
+      ],
+      "security": {
+        "verified_publisher": true,
+        "last_audit_date": "2026-08-02"
+      },
+      "health_status": "healthy"
+    },
+    {
       "id": "ollama",
       "name": "Ollama",
       "tagline": "Get up and running with Llama 3, Mistral, and other large language models locally",
@@ -796,6 +1235,69 @@
       "security": {
         "verified_publisher": true,
         "last_audit_date": "2026-07-30"
+      },
+      "health_status": "healthy"
+    },
+    {
+      "id": "open-webui",
+      "name": "Open WebUI",
+      "tagline": "Self-Hosted WebUI for LLMs and Ollama",
+      "description": "A user-friendly self-hosted WebUI designed for running LLMs locally with Ollama, supporting chat history, model switching, RAG pipelines, and user management.",
+      "website": "https://openwebui.com",
+      "repository": "https://github.com/open-webui/open-webui",
+      "license_spdx": "MIT",
+      "category": "ai-tools",
+      "tags": [
+        "ollama-frontend",
+        "self-hosted",
+        "ai-chat",
+        "local-llm",
+        "rag"
+      ],
+      "capabilities": [
+        "local-llm",
+        "self-hosting",
+        "document-indexing",
+        "multi-user-support"
+      ],
+      "import_export_formats": [
+        ".json",
+        ".pdf",
+        ".txt"
+      ],
+      "platforms": [
+        "macOS",
+        "Windows",
+        "Linux"
+      ],
+      "pricing": {
+        "model": "free_open_source",
+        "has_paid_tier": false
+      },
+      "privacy": {
+        "telemetry": false,
+        "offline_usable": true,
+        "cloud_sync_required": false
+      },
+      "self_hosting": {
+        "supported": true,
+        "docker_compose": true
+      },
+      "installation": {
+        "macOS": "docker run -p 3000:8080 ghcr.io/open-webui/open-webui:main",
+        "Linux": "docker run -p 3000:8080 ghcr.io/open-webui/open-webui:main"
+      },
+      "replaces": [
+        {
+          "target": "chatgpt",
+          "migration_ease": "moderate",
+          "import_supported": true,
+          "notes": "Local Ollama-powered ChatGPT experience with document upload and RAG support."
+        }
+      ],
+      "security": {
+        "verified_publisher": true,
+        "last_audit_date": "2026-08-02"
       },
       "health_status": "healthy"
     },
@@ -1315,6 +1817,65 @@
       "security": {
         "verified_publisher": true,
         "last_audit_date": "2026-07-30"
+      },
+      "health_status": "healthy"
+    },
+    {
+      "id": "zed",
+      "name": "Zed",
+      "tagline": "High-performance multiplayer code editor",
+      "description": "A high-performance, collaborative code editor from the creators of Atom and Tree-sitter. Built in Rust with GPU-accelerated rendering for instant responsiveness and built-in real-time collaboration.",
+      "website": "https://zed.dev",
+      "repository": "https://github.com/zed-industries/zed",
+      "license_spdx": "GPL-3.0-or-later",
+      "category": "developer-tools",
+      "tags": [
+        "code-editor",
+        "ide",
+        "rust",
+        "collaboration",
+        "vscode-alternative"
+      ],
+      "capabilities": [
+        "gpu-accelerated",
+        "real-time-collaboration",
+        "language-server-protocol",
+        "ai-integration"
+      ],
+      "import_export_formats": [
+        ".json"
+      ],
+      "platforms": [
+        "macOS",
+        "Linux"
+      ],
+      "pricing": {
+        "model": "free_open_source",
+        "has_paid_tier": false
+      },
+      "privacy": {
+        "telemetry": false,
+        "offline_usable": true,
+        "cloud_sync_required": false
+      },
+      "self_hosting": {
+        "supported": false
+      },
+      "installation": {
+        "macOS": "brew install --cask zed",
+        "Linux": "snap install zed-editor"
+      },
+      "replaces": [
+        {
+          "target": "vscode",
+          "migration_ease": "moderate",
+          "import_supported": true,
+          "notes": "VS Code keybinding and extension import available. GPU-accelerated performance advantage."
+        }
+      ],
+      "security": {
+        "verified_publisher": true,
+        "last_audit_date": "2026-08-02"
       },
       "health_status": "healthy"
     }

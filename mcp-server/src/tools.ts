@@ -1,3 +1,4 @@
+import { z } from 'zod';
 import { CacheManager } from './cache-manager.js';
 import { SearchEngine } from './search-engine.js';
 
@@ -5,12 +6,13 @@ export function registerTools(server: any, cacheManager: CacheManager, searchEng
   // 1. Tool: search_free_apps
   server.tool(
     'search_free_apps',
+    'Search FOSS tools by query, category, platform, or capability requirements.',
     {
-      query: { type: 'string', description: 'Search keywords, app name, or natural language capability query' },
-      platform: { type: 'string', description: 'Optional platform filter: macOS | Windows | Linux' },
-      category: { type: 'string', description: 'Optional category filter (e.g., developer-tools, ai-tools, container-infra)' },
-      capability: { type: 'string', description: 'Optional capability requirement (e.g., offline-editing, git-versioning, local-llm)' },
-      offline_only: { type: 'boolean', description: 'Require offline usability without mandatory cloud accounts' }
+      query: z.string().optional().describe('Search keywords, app name, or natural language capability query'),
+      platform: z.string().optional().describe('Optional platform filter: macOS | Windows | Linux'),
+      category: z.string().optional().describe('Optional category filter (e.g., developer-tools, ai-tools, container-infra)'),
+      capability: z.string().optional().describe('Optional capability requirement (e.g., offline-editing, git-versioning, local-llm)'),
+      offline_only: z.boolean().optional().describe('Require offline usability without mandatory cloud accounts')
     },
     async (args: any) => {
       const registry = cacheManager.getRegistry();
@@ -51,8 +53,9 @@ export function registerTools(server: any, cacheManager: CacheManager, searchEng
   // 2. Tool: get_app_details
   server.tool(
     'get_app_details',
+    'Retrieve full detailed schema entity of a specific FOSS application by ID.',
     {
-      app_id: { type: 'string', description: 'Unique identifier of the application (e.g., bruno, vscodium, ollama)' }
+      app_id: z.string().describe('Unique identifier of the application (e.g., bruno, vscodium, ollama)')
     },
     async (args: any) => {
       const registry = cacheManager.getRegistry();
@@ -84,8 +87,9 @@ export function registerTools(server: any, cacheManager: CacheManager, searchEng
   // 3. Tool: find_foss_alternative
   server.tool(
     'find_foss_alternative',
+    'Find free & open-source alternatives for a commercial or proprietary tool.',
     {
-      paid_software: { type: 'string', description: 'Name of commercial/proprietary software to replace (e.g., postman, vscode, photoshop, docker-desktop, firebase)' }
+      paid_software: z.string().describe('Name of commercial/proprietary software to replace (e.g., postman, vscode, photoshop, docker-desktop, firebase)')
     },
     async (args: any) => {
       const registry = cacheManager.getRegistry();
@@ -130,9 +134,10 @@ export function registerTools(server: any, cacheManager: CacheManager, searchEng
   // 4. Tool: compare_apps
   server.tool(
     'compare_apps',
+    'Compare two FOSS applications side-by-side on capabilities, licensing, pricing, and self-hosting.',
     {
-      app_id_1: { type: 'string', description: 'First app ID to compare (e.g., bruno)' },
-      app_id_2: { type: 'string', description: 'Second app ID to compare (e.g., hoppscotch)' }
+      app_id_1: z.string().describe('First app ID to compare (e.g., bruno)'),
+      app_id_2: z.string().describe('Second app ID to compare (e.g., hoppscotch)')
     },
     async (args: any) => {
       const registry = cacheManager.getRegistry();
@@ -193,9 +198,10 @@ export function registerTools(server: any, cacheManager: CacheManager, searchEng
   // 5. Tool: audit_manifest
   server.tool(
     'audit_manifest',
+    'Audit dependency manifest content (e.g. package.json, docker-compose.yml) to discover FOSS replacements.',
     {
-      manifest_content: { type: 'string', description: 'Raw content of configuration file (e.g. package.json, docker-compose.yml, requirements.txt)' },
-      manifest_type: { type: 'string', description: 'Optional manifest type indicator (e.g. package.json, docker-compose, env)' }
+      manifest_content: z.string().describe('Raw content of configuration file (e.g. package.json, docker-compose.yml, requirements.txt)'),
+      manifest_type: z.string().optional().describe('Optional manifest type indicator (e.g. package.json, docker-compose, env)')
     },
     async (args: any) => {
       const registry = cacheManager.getRegistry();

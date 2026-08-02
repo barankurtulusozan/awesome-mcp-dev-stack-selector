@@ -1,0 +1,49 @@
+{
+  "id": "lazygit",
+  "name": "LazyGit",
+  "tagline": "Simple terminal UI for git commands",
+  "description": "A simple terminal UI for git commands written in Go. Provides an intuitive visual interface for staging, committing, branching, merging, and resolving conflicts without memorizing complex git CLI syntax.",
+  "website": "https://github.com/jesseduffield/lazygit",
+  "repository": "https://github.com/jesseduffield/lazygit",
+  "license_spdx": "MIT",
+  "category": "developer-tools",
+  "tags": ["git", "terminal-ui", "version-control", "tui", "developer-productivity"],
+  "capabilities": [
+    "git-versioning",
+    "interactive-rebase",
+    "conflict-resolution",
+    "cli-first"
+  ],
+  "import_export_formats": [],
+  "platforms": ["macOS", "Windows", "Linux"],
+  "pricing": {
+    "model": "free_open_source",
+    "has_paid_tier": false
+  },
+  "privacy": {
+    "telemetry": false,
+    "offline_usable": true,
+    "cloud_sync_required": false
+  },
+  "self_hosting": {
+    "supported": false
+  },
+  "installation": {
+    "macOS": "brew install lazygit",
+    "Windows": "winget install JesseDuffield.Lazygit",
+    "Linux": "snap install lazygit"
+  },
+  "replaces": [
+    {
+      "target": "gitkraken",
+      "migration_ease": "seamless",
+      "import_supported": false,
+      "notes": "Terminal-native Git GUI alternative. Keyboard-driven, zero overhead."
+    }
+  ],
+  "security": {
+    "verified_publisher": true,
+    "last_audit_date": "2026-08-02"
+  },
+  "health_status": "healthy"
+}

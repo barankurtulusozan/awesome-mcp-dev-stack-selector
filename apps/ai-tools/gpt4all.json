@@ -1,0 +1,48 @@
+{
+  "id": "gpt4all",
+  "name": "GPT4All",
+  "tagline": "Run Local LLMs on Any Hardware",
+  "description": "A free-to-use, locally running, privacy-aware desktop chatbot. No GPU required. Runs quantized models on consumer hardware with a simple installer.",
+  "website": "https://gpt4all.io",
+  "repository": "https://github.com/nomic-ai/gpt4all",
+  "license_spdx": "MIT",
+  "category": "ai-tools",
+  "tags": ["local-llm", "desktop-ai", "privacy-first", "no-gpu-required", "chatgpt-alternative"],
+  "capabilities": [
+    "local-llm",
+    "offline-usable",
+    "model-management",
+    "document-indexing"
+  ],
+  "import_export_formats": [".gguf", ".json"],
+  "platforms": ["macOS", "Windows", "Linux"],
+  "pricing": {
+    "model": "free_open_source",
+    "has_paid_tier": false
+  },
+  "privacy": {
+    "telemetry": false,
+    "offline_usable": true,
+    "cloud_sync_required": false
+  },
+  "self_hosting": {
+    "supported": true
+  },
+  "installation": {
+    "macOS": "brew install --cask gpt4all",
+    "Windows": "winget install Nomic.GPT4All"
+  },
+  "replaces": [
+    {
+      "target": "chatgpt-desktop",
+      "migration_ease": "seamless",
+      "import_supported": false,
+      "notes": "Run LLMs locally without GPU requirement. CPU-optimized quantized models included."
+    }
+  ],
+  "security": {
+    "verified_publisher": true,
+    "last_audit_date": "2026-08-02"
+  },
+  "health_status": "healthy"
+}

@@ -1,0 +1,49 @@
+{
+  "id": "open-webui",
+  "name": "Open WebUI",
+  "tagline": "Self-Hosted WebUI for LLMs and Ollama",
+  "description": "A user-friendly self-hosted WebUI designed for running LLMs locally with Ollama, supporting chat history, model switching, RAG pipelines, and user management.",
+  "website": "https://openwebui.com",
+  "repository": "https://github.com/open-webui/open-webui",
+  "license_spdx": "MIT",
+  "category": "ai-tools",
+  "tags": ["ollama-frontend", "self-hosted", "ai-chat", "local-llm", "rag"],
+  "capabilities": [
+    "local-llm",
+    "self-hosting",
+    "document-indexing",
+    "multi-user-support"
+  ],
+  "import_export_formats": [".json", ".pdf", ".txt"],
+  "platforms": ["macOS", "Windows", "Linux"],
+  "pricing": {
+    "model": "free_open_source",
+    "has_paid_tier": false
+  },
+  "privacy": {
+    "telemetry": false,
+    "offline_usable": true,
+    "cloud_sync_required": false
+  },
+  "self_hosting": {
+    "supported": true,
+    "docker_compose": true
+  },
+  "installation": {
+    "macOS": "docker run -p 3000:8080 ghcr.io/open-webui/open-webui:main",
+    "Linux": "docker run -p 3000:8080 ghcr.io/open-webui/open-webui:main"
+  },
+  "replaces": [
+    {
+      "target": "chatgpt",
+      "migration_ease": "moderate",
+      "import_supported": true,
+      "notes": "Local Ollama-powered ChatGPT experience with document upload and RAG support."
+    }
+  ],
+  "security": {
+    "verified_publisher": true,
+    "last_audit_date": "2026-08-02"
+  },
+  "health_status": "healthy"
+}

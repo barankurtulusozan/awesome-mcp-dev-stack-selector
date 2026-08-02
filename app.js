@@ -28,6 +28,9 @@ async function initApp() {
   setupEventListeners();
   renderFossFinder('postman');
   renderMcpForm('search_free_apps');
+
+  handleHashNavigation();
+  window.addEventListener('hashchange', handleHashNavigation);
 }
 
 function setupEventListeners() {
@@ -490,6 +493,45 @@ function openComparisonModal(appId1, appId2) {
   document.getElementById('close-modal')?.addEventListener('click', () => {
     modal.classList.add('hidden');
   });
+}
+
+function handleHashNavigation() {
+  const hash = window.location.hash;
+  if (!hash) return;
+
+  if (hash.startsWith('#app/')) {
+    const appId = hash.replace('#app/', '').trim();
+    const searchInput = document.getElementById('search-input');
+    if (searchInput) {
+      searchInput.value = appId;
+      renderCatalog();
+    }
+  } else if (hash.startsWith('#finder')) {
+    const finderElem = document.getElementById('finder');
+    if (finderElem) finderElem.scrollIntoView({ behavior: 'smooth' });
+    const urlParams = new URLSearchParams(hash.includes('?') ? hash.split('?')[1] : '');
+    const q = urlParams.get('q');
+    if (q) {
+      const finderInput = document.getElementById('finder-input');
+      if (finderInput) finderInput.value = q;
+      renderFossFinder(q);
+    }
+  } else if (hash.startsWith('#compare')) {
+    const urlParams = new URLSearchParams(hash.includes('?') ? hash.split('?')[1] : '');
+    const appsParam = urlParams.get('apps');
+    if (appsParam) {
+      const [app1, app2] = appsParam.split(',');
+      if (app1 && app2) {
+        openComparisonModal(app1.trim(), app2.trim());
+      }
+    }
+  } else if (hash.startsWith('#stack-builder')) {
+    const stackElem = document.getElementById('stack-builder');
+    if (stackElem) stackElem.scrollIntoView({ behavior: 'smooth' });
+  } else if (hash.startsWith('#mcp-playground')) {
+    const mcpElem = document.getElementById('mcp-playground');
+    if (mcpElem) mcpElem.scrollIntoView({ behavior: 'smooth' });
+  }
 }
 
 function getFallbackRegistry() {

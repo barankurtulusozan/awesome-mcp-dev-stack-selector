@@ -1,0 +1,49 @@
+{
+  "id": "obs-studio",
+  "name": "OBS Studio",
+  "tagline": "Free and open-source software for live streaming and recording",
+  "description": "Industry-standard open-source software for video recording and live streaming. Supports high-performance real-time video/audio capturing, scene composition, encoding, and broadcasting to platforms like Twitch, YouTube, and custom RTMP servers.",
+  "website": "https://obsproject.com",
+  "repository": "https://github.com/obsproject/obs-studio",
+  "license_spdx": "GPL-2.0-only",
+  "category": "design-media",
+  "tags": ["streaming", "screen-recording", "broadcasting", "video-capture", "obs"],
+  "capabilities": [
+    "live-streaming",
+    "screen-recording",
+    "scene-composition",
+    "plugin-system"
+  ],
+  "import_export_formats": [".mkv", ".mp4", ".flv", ".json"],
+  "platforms": ["macOS", "Windows", "Linux"],
+  "pricing": {
+    "model": "free_open_source",
+    "has_paid_tier": false
+  },
+  "privacy": {
+    "telemetry": false,
+    "offline_usable": true,
+    "cloud_sync_required": false
+  },
+  "self_hosting": {
+    "supported": false
+  },
+  "installation": {
+    "macOS": "brew install --cask obs",
+    "Windows": "winget install OBSProject.OBSStudio",
+    "Linux": "snap install obs-studio"
+  },
+  "replaces": [
+    {
+      "target": "streamlabs",
+      "migration_ease": "seamless",
+      "import_supported": true,
+      "notes": "Streamlabs is itself a fork of OBS. Scene collection export/import fully compatible."
+    }
+  ],
+  "security": {
+    "verified_publisher": true,
+    "last_audit_date": "2026-08-02"
+  },
+  "health_status": "healthy"
+}

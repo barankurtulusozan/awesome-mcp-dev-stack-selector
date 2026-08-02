@@ -13,7 +13,7 @@
   <a href="https://github.com/awesome-mcp-dev-stack-selector/awesome-mcp-dev-stack-selector/actions"><img src="https://github.com/awesome-mcp-dev-stack-selector/awesome-mcp-dev-stack-selector/actions/workflows/validate-pr.yml/badge.svg" alt="Build & Validate"></a>
   <a href="https://modelcontextprotocol.io"><img src="https://img.shields.io/badge/MCP-Protocol--v1.0-6b4fbb.svg" alt="MCP Protocol v1.0"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License: MIT"></a>
-  <a href="#-apps-directory-20-verified-entries"><img src="https://img.shields.io/badge/FOSS--Apps-20-brightgreen.svg" alt="Apps Count"></a>
+  <a href="#-apps-directory-29-verified-entries"><img src="https://img.shields.io/badge/FOSS--Apps-29-brightgreen.svg" alt="Apps Count"></a>
 </p>
 
 ---
@@ -211,7 +211,7 @@ flowchart TD
 
 ---
 
-## 📚 Apps Directory (20 Verified Entries)
+## 📚 Apps Directory (29 Verified Entries)
 
 ### 🛠️ Developer Tools & IDEs
 
@@ -219,17 +219,23 @@ flowchart TD
 | --- | --- | --- | --- | --- | --- |
 | [**Bruno**](https://www.usebruno.com) | `MIT` | Fast, offline-first, Git-friendly open-source API client | `offline-editing` `git-versioning` `scripting` | ~postman~, ~insomnia~ | `brew install bruno` |
 | [**DBeaver Community**](https://dbeaver.io) | `Apache-2.0` | Free multi-platform database tool for developers and DBAs | `sql-editor` `schema-visualizer` `data-export` | ~datagrip~, ~navicat~ | `brew install dbeaver-community` |
+| [**Ghostty**](https://ghostty.org) | `MIT` | Fast, feature-rich, cross-platform terminal emulator | `gpu-accelerated` `native-rendering` `ligature-support` | ~iterm2~ | `brew install --cask ghostty` |
 | [**Hoppscotch**](https://hoppscotch.io) | `MIT` | Open Source API Development Ecosystem | `self-hosting` `web-based` `graphql-client` | ~postman~ | `brew install --cask hoppscotch` |
+| [**LazyGit**](https://github.com/jesseduffield/lazygit) | `MIT` | Simple terminal UI for git commands | `git-versioning` `interactive-rebase` `conflict-resolution` | ~gitkraken~ | `brew install lazygit` |
 | [**VSCodium**](https://vscodium.com) | `MIT` | Free and open-source binaries of VS Code without telemetry or tracking | `extension-marketplace` `integrated-terminal` `git-integration` | ~vscode~ | `brew install vscodium` |
+| [**Zed**](https://zed.dev) | `GPL-3.0-or-later` | High-performance multiplayer code editor | `gpu-accelerated` `real-time-collaboration` `language-server-protocol` | ~vscode~ | `brew install --cask zed` |
 
 ### 🤖 Local AI & LLM Tools
 
 | App | License | Tagline | Capabilities | Replaces | One-Line Install |
 | --- | --- | --- | --- | --- | --- |
 | [**AnythingLLM**](https://anythingllm.com) | `MIT` | Full-Stack Desktop AI Assistant & Local RAG | `local-llm` `document-indexing` `vector-search` | ~custom-gpt~ | `brew install --cask anythingllm` |
+| [**GPT4All**](https://gpt4all.io) | `MIT` | Run Local LLMs on Any Hardware | `local-llm` `offline-usable` `model-management` | ~chatgpt-desktop~ | `brew install --cask gpt4all` |
 | [**Jan**](https://jan.ai) | `AGPL-3.0` | Rethinking the AI Desktop Client | `local-llm` `offline-usable` `openai-api-compatibility` | ~chatgpt-desktop~ | `brew install --cask jan` |
+| [**LibreChat**](https://www.librechat.ai) | `MIT` | Enhanced ChatGPT Clone with Multi-Provider Support | `multi-provider-llm` `self-hosting` `plugin-system` | ~chatgpt~ | `docker run -p 3080:3080 ghcr.io/danny-avila/librechat:latest` |
 | [**LM Studio**](https://lmstudio.ai) | `Proprietary-Free` | Discover, download, and run local LLMs offline on Mac, Windows, and Linux | `local-llm` `gui-chat` `model-downloader` | ~chatgpt-desktop~ | `brew install lm-studio` |
 | [**Ollama**](https://ollama.com) | `MIT` | Get up and running with Llama 3, Mistral, and other large language models locally | `local-llm` `openai-api` `gpu-acceleration` | ~openai-api~ | `brew install ollama` |
+| [**Open WebUI**](https://openwebui.com) | `MIT` | Self-Hosted WebUI for LLMs and Ollama | `local-llm` `self-hosting` `document-indexing` | ~chatgpt~ | `docker run -p 3000:8080 ghcr.io/open-webui/open-webui:main` |
 
 ### 🐳 Container & Infrastructure
 
@@ -244,9 +250,17 @@ flowchart TD
 
 | App | License | Tagline | Capabilities | Replaces | One-Line Install |
 | --- | --- | --- | --- | --- | --- |
+| [**Blender**](https://www.blender.org) | `GPL-2.0-or-later` | Free and open-source 3D creation suite | `3d-modeling` `animation-rigging` `rendering-engine` | ~maya~, ~cinema4d~ | `brew install --cask blender` |
 | [**GIMP**](https://www.gimp.org) | `GPL-3.0-or-later` | GNU Image Manipulation Program - Free & open source image editor | `raster-editing` `layer-management` `plugin-support` | ~photoshop~ | `brew install gimp` |
 | [**Inkscape**](https://inkscape.org) | `GPL-3.0-or-later` | Professional vector graphics editor for Linux, Windows and macOS | `vector-editing` `svg-native` `bezier-curves` | ~adobe-illustrator~ | `brew install inkscape` |
+| [**OBS Studio**](https://obsproject.com) | `GPL-2.0-only` | Free and open-source software for live streaming and recording | `live-streaming` `screen-recording` `scene-composition` | ~streamlabs~ | `brew install --cask obs` |
 | [**Penpot**](https://penpot.app) | `MPL-2.0` | Open Source Design & Prototyping Platform | `self-hosting` `web-based` `vector-editing` | ~figma~ | `docker run -it --rm penpot/backend:latest` |
+
+### 📝 Knowledge & Productivity
+
+| App | License | Tagline | Capabilities | Replaces | One-Line Install |
+| --- | --- | --- | --- | --- | --- |
+| [**Logseq**](https://logseq.com) | `AGPL-3.0` | Privacy-first, open-source knowledge management | `offline-editing` `bidirectional-linking` `graph-visualization` | ~notion~ | `brew install --cask logseq` |
 
 ---
 

@@ -1,4 +1,4 @@
-import assert from 'assert';
+import { describe, it, expect } from 'vitest';
 import { SearchEngine } from './search-engine.js';
 import { AppEntry } from './types.js';
 
@@ -36,23 +36,24 @@ const mockApps: AppEntry[] = [
   }
 ];
 
-export function runSearchEngineTests() {
+describe('SearchEngine Unit Tests', () => {
   const engine = new SearchEngine();
 
-  // Test 1: Query matching
-  const res1 = engine.search(mockApps, { query: 'postman' });
-  assert.strictEqual(res1.length, 1);
-  assert.strictEqual(res1[0].app.id, 'bruno');
+  it('should find alternatives matching keyword search', () => {
+    const results = engine.search(mockApps, { query: 'postman' });
+    expect(results).toHaveLength(1);
+    expect(results[0].app.id).toBe('bruno');
+  });
 
-  // Test 2: Platform filter
-  const res2 = engine.search(mockApps, { platform: 'Windows' });
-  assert.strictEqual(res2.length, 1);
-  assert.strictEqual(res2[0].app.id, 'bruno');
+  it('should filter apps by platform', () => {
+    const results = engine.search(mockApps, { platform: 'Windows' });
+    expect(results).toHaveLength(1);
+    expect(results[0].app.id).toBe('bruno');
+  });
 
-  // Test 3: Capability filter
-  const res3 = engine.search(mockApps, { capability: 'local-llm' });
-  assert.strictEqual(res3.length, 1);
-  assert.strictEqual(res3[0].app.id, 'ollama');
-
-  console.log('✅ SearchEngine module tests passed!');
-}
+  it('should filter apps by capability', () => {
+    const results = engine.search(mockApps, { capability: 'local-llm' });
+    expect(results).toHaveLength(1);
+    expect(results[0].app.id).toBe('ollama');
+  });
+});

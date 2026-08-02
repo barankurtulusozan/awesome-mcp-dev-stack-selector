@@ -1,0 +1,49 @@
+{
+  "id": "librechat",
+  "name": "LibreChat",
+  "tagline": "Enhanced ChatGPT Clone with Multi-Provider Support",
+  "description": "An open-source ChatGPT-style interface supporting multiple AI providers (OpenAI, Anthropic, Google, local models via Ollama). Features conversations, presets, plugins, and multi-user support.",
+  "website": "https://www.librechat.ai",
+  "repository": "https://github.com/danny-avila/LibreChat",
+  "license_spdx": "MIT",
+  "category": "ai-tools",
+  "tags": ["chatgpt-alternative", "multi-llm", "self-hosted", "ai-chat", "ollama-frontend"],
+  "capabilities": [
+    "multi-provider-llm",
+    "self-hosting",
+    "plugin-system",
+    "multi-user-support"
+  ],
+  "import_export_formats": [".json"],
+  "platforms": ["macOS", "Windows", "Linux"],
+  "pricing": {
+    "model": "free_open_source",
+    "has_paid_tier": false
+  },
+  "privacy": {
+    "telemetry": false,
+    "offline_usable": true,
+    "cloud_sync_required": false
+  },
+  "self_hosting": {
+    "supported": true,
+    "docker_compose": true
+  },
+  "installation": {
+    "macOS": "docker run -p 3080:3080 ghcr.io/danny-avila/librechat:latest",
+    "Linux": "docker run -p 3080:3080 ghcr.io/danny-avila/librechat:latest"
+  },
+  "replaces": [
+    {
+      "target": "chatgpt",
+      "migration_ease": "seamless",
+      "import_supported": true,
+      "notes": "ChatGPT conversation import supported. Connects to local Ollama or any OpenAI-compatible API."
+    }
+  ],
+  "security": {
+    "verified_publisher": true,
+    "last_audit_date": "2026-08-02"
+  },
+  "health_status": "healthy"
+}

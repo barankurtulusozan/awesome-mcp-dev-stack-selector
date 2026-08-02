@@ -1,0 +1,47 @@
+{
+  "id": "ghostty",
+  "name": "Ghostty",
+  "tagline": "Fast, feature-rich, cross-platform terminal emulator",
+  "description": "A GPU-accelerated terminal emulator that aims to be fast, feature-rich, and native. Uses platform-native UI and rendering with a focus on correctness and performance.",
+  "website": "https://ghostty.org",
+  "repository": "https://github.com/ghostty-org/ghostty",
+  "license_spdx": "MIT",
+  "category": "developer-tools",
+  "tags": ["terminal", "gpu-accelerated", "iterm-alternative", "cross-platform"],
+  "capabilities": [
+    "gpu-accelerated",
+    "native-rendering",
+    "ligature-support",
+    "cli-first"
+  ],
+  "import_export_formats": [],
+  "platforms": ["macOS", "Linux"],
+  "pricing": {
+    "model": "free_open_source",
+    "has_paid_tier": false
+  },
+  "privacy": {
+    "telemetry": false,
+    "offline_usable": true,
+    "cloud_sync_required": false
+  },
+  "self_hosting": {
+    "supported": false
+  },
+  "installation": {
+    "macOS": "brew install --cask ghostty"
+  },
+  "replaces": [
+    {
+      "target": "iterm2",
+      "migration_ease": "moderate",
+      "import_supported": false,
+      "notes": "GPU-rendered terminal with significantly lower latency and memory usage."
+    }
+  ],
+  "security": {
+    "verified_publisher": true,
+    "last_audit_date": "2026-08-02"
+  },
+  "health_status": "healthy"
+}

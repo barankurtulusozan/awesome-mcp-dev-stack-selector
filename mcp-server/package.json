@@ -11,7 +11,7 @@
   "scripts": {
     "build": "tsc",
     "start": "node dist/index.js",
-    "test": "node dist/test.js"
+    "test": "vitest run"
   },
   "keywords": [
     "mcp",
@@ -24,10 +24,12 @@
   "author": "Awesome MCP Dev Stack Selector Maintainers",
   "license": "MIT",
   "dependencies": {
-    "@modelcontextprotocol/sdk": "^1.1.0"
+    "@modelcontextprotocol/sdk": "^1.1.0",
+    "zod": "^4.4.3"
   },
   "devDependencies": {
     "@types/node": "^22.0.0",
-    "typescript": "^5.5.0"
+    "typescript": "^5.5.0",
+    "vitest": "^2.1.8"
   }
 }
