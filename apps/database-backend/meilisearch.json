@@ -8,15 +8,28 @@
   "repository": "https://github.com/meilisearch/meilisearch",
   "license_spdx": "MIT",
   "category": "database-backend",
-  "tags": ["search-engine", "algolia-alternative", "typo-tolerance", "full-text-search"],
+  "tags": [
+    "search-engine",
+    "algolia-alternative",
+    "typo-tolerance",
+    "full-text-search"
+  ],
   "capabilities": [
     "self-hosting",
     "full-text-search",
     "typo-tolerance",
     "vector-search"
   ],
-  "import_export_formats": [".json", ".ndjson", ".csv"],
-  "platforms": ["macOS", "Windows", "Linux"],
+  "import_export_formats": [
+    ".json",
+    ".ndjson",
+    ".csv"
+  ],
+  "platforms": [
+    "macOS",
+    "Windows",
+    "Linux"
+  ],
   "pricing": {
     "model": "free_open_source",
     "has_paid_tier": true,

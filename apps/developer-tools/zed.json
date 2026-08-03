@@ -7,15 +7,26 @@
   "repository": "https://github.com/zed-industries/zed",
   "license_spdx": "GPL-3.0-or-later",
   "category": "developer-tools",
-  "tags": ["code-editor", "ide", "rust", "collaboration", "vscode-alternative"],
+  "tags": [
+    "code-editor",
+    "ide",
+    "rust",
+    "collaboration",
+    "vscode-alternative"
+  ],
   "capabilities": [
     "gpu-accelerated",
     "real-time-collaboration",
     "language-server-protocol",
     "ai-integration"
   ],
-  "import_export_formats": [".json"],
-  "platforms": ["macOS", "Linux"],
+  "import_export_formats": [
+    ".json"
+  ],
+  "platforms": [
+    "macOS",
+    "Linux"
+  ],
   "pricing": {
     "model": "free_open_source",
     "has_paid_tier": false

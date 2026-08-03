@@ -8,15 +8,28 @@
   "repository": "https://github.com/k3s-io/k3s",
   "license_spdx": "Apache-2.0",
   "category": "container-infra",
-  "tags": ["kubernetes", "k8s", "container-orchestration", "edge-computing", "dev-environment"],
+  "tags": [
+    "kubernetes",
+    "k8s",
+    "container-orchestration",
+    "edge-computing",
+    "dev-environment"
+  ],
   "capabilities": [
     "container-orchestration",
     "lightweight-runtime",
     "self-hosting",
     "offline-usable"
   ],
-  "import_export_formats": [".yaml", ".yml", "helm-chart"],
-  "platforms": ["macOS", "Linux"],
+  "import_export_formats": [
+    ".yaml",
+    ".yml",
+    "helm-chart"
+  ],
+  "platforms": [
+    "macOS",
+    "Linux"
+  ],
   "pricing": {
     "model": "free_open_source",
     "has_paid_tier": false

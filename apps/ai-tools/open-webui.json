@@ -7,15 +7,29 @@
   "repository": "https://github.com/open-webui/open-webui",
   "license_spdx": "MIT",
   "category": "ai-tools",
-  "tags": ["ollama-frontend", "self-hosted", "ai-chat", "local-llm", "rag"],
+  "tags": [
+    "ollama-frontend",
+    "self-hosted",
+    "ai-chat",
+    "local-llm",
+    "rag"
+  ],
   "capabilities": [
     "local-llm",
     "self-hosting",
     "document-indexing",
     "multi-user-support"
   ],
-  "import_export_formats": [".json", ".pdf", ".txt"],
-  "platforms": ["macOS", "Windows", "Linux"],
+  "import_export_formats": [
+    ".json",
+    ".pdf",
+    ".txt"
+  ],
+  "platforms": [
+    "macOS",
+    "Windows",
+    "Linux"
+  ],
   "pricing": {
     "model": "free_open_source",
     "has_paid_tier": false

@@ -8,15 +8,29 @@
   "repository": "https://github.com/opentofu/opentofu",
   "license_spdx": "MPL-2.0",
   "category": "container-infra",
-  "tags": ["iac", "terraform-alternative", "infrastructure", "devops", "cloud-automation"],
+  "tags": [
+    "iac",
+    "terraform-alternative",
+    "infrastructure",
+    "devops",
+    "cloud-automation"
+  ],
   "capabilities": [
     "infrastructure-as-code",
     "declarative-state",
     "multi-cloud",
     "offline-usable"
   ],
-  "import_export_formats": [".tf", ".tfstate", ".hcl"],
-  "platforms": ["macOS", "Windows", "Linux"],
+  "import_export_formats": [
+    ".tf",
+    ".tfstate",
+    ".hcl"
+  ],
+  "platforms": [
+    "macOS",
+    "Windows",
+    "Linux"
+  ],
   "pricing": {
     "model": "free_open_source",
     "has_paid_tier": false

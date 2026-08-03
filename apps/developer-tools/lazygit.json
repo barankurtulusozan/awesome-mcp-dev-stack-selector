@@ -7,7 +7,13 @@
   "repository": "https://github.com/jesseduffield/lazygit",
   "license_spdx": "MIT",
   "category": "developer-tools",
-  "tags": ["git", "terminal-ui", "version-control", "tui", "developer-productivity"],
+  "tags": [
+    "git",
+    "terminal-ui",
+    "version-control",
+    "tui",
+    "developer-productivity"
+  ],
   "capabilities": [
     "git-versioning",
     "interactive-rebase",
@@ -15,7 +21,11 @@
     "cli-first"
   ],
   "import_export_formats": [],
-  "platforms": ["macOS", "Windows", "Linux"],
+  "platforms": [
+    "macOS",
+    "Windows",
+    "Linux"
+  ],
   "pricing": {
     "model": "free_open_source",
     "has_paid_tier": false

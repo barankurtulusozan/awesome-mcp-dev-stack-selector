@@ -7,15 +7,27 @@
   "repository": "https://github.com/danny-avila/LibreChat",
   "license_spdx": "MIT",
   "category": "ai-tools",
-  "tags": ["chatgpt-alternative", "multi-llm", "self-hosted", "ai-chat", "ollama-frontend"],
+  "tags": [
+    "chatgpt-alternative",
+    "multi-llm",
+    "self-hosted",
+    "ai-chat",
+    "ollama-frontend"
+  ],
   "capabilities": [
     "multi-provider-llm",
     "self-hosting",
     "plugin-system",
     "multi-user-support"
   ],
-  "import_export_formats": [".json"],
-  "platforms": ["macOS", "Windows", "Linux"],
+  "import_export_formats": [
+    ".json"
+  ],
+  "platforms": [
+    "macOS",
+    "Windows",
+    "Linux"
+  ],
   "pricing": {
     "model": "free_open_source",
     "has_paid_tier": false

@@ -7,7 +7,13 @@
   "repository": "https://github.com/blender/blender",
   "license_spdx": "GPL-2.0-or-later",
   "category": "design-media",
-  "tags": ["3d-modeling", "animation", "rendering", "video-editing", "maya-alternative"],
+  "tags": [
+    "3d-modeling",
+    "animation",
+    "rendering",
+    "video-editing",
+    "maya-alternative"
+  ],
   "capabilities": [
     "3d-modeling",
     "animation-rigging",
@@ -15,8 +21,20 @@
     "video-editing",
     "scripting"
   ],
-  "import_export_formats": [".blend", ".fbx", ".obj", ".gltf", ".usd", ".stl", ".svg"],
-  "platforms": ["macOS", "Windows", "Linux"],
+  "import_export_formats": [
+    ".blend",
+    ".fbx",
+    ".obj",
+    ".gltf",
+    ".usd",
+    ".stl",
+    ".svg"
+  ],
+  "platforms": [
+    "macOS",
+    "Windows",
+    "Linux"
+  ],
   "pricing": {
     "model": "free_open_source",
     "has_paid_tier": false

@@ -8,7 +8,13 @@
   "repository": "https://github.com/penpot/penpot",
   "license_spdx": "MPL-2.0",
   "category": "design-media",
-  "tags": ["design", "figma-alternative", "ui-ux", "prototyping", "vector-graphics"],
+  "tags": [
+    "design",
+    "figma-alternative",
+    "ui-ux",
+    "prototyping",
+    "vector-graphics"
+  ],
   "capabilities": [
     "self-hosting",
     "web-based",
@@ -16,8 +22,17 @@
     "prototyping",
     "svg-native"
   ],
-  "import_export_formats": [".svg", ".penpot", ".pdf", ".png"],
-  "platforms": ["macOS", "Windows", "Linux"],
+  "import_export_formats": [
+    ".svg",
+    ".penpot",
+    ".pdf",
+    ".png"
+  ],
+  "platforms": [
+    "macOS",
+    "Windows",
+    "Linux"
+  ],
   "pricing": {
     "model": "free_open_source",
     "has_paid_tier": false

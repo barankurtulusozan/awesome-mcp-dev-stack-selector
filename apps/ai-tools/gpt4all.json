@@ -7,15 +7,28 @@
   "repository": "https://github.com/nomic-ai/gpt4all",
   "license_spdx": "MIT",
   "category": "ai-tools",
-  "tags": ["local-llm", "desktop-ai", "privacy-first", "no-gpu-required", "chatgpt-alternative"],
+  "tags": [
+    "local-llm",
+    "desktop-ai",
+    "privacy-first",
+    "no-gpu-required",
+    "chatgpt-alternative"
+  ],
   "capabilities": [
     "local-llm",
     "offline-usable",
     "model-management",
     "document-indexing"
   ],
-  "import_export_formats": [".gguf", ".json"],
-  "platforms": ["macOS", "Windows", "Linux"],
+  "import_export_formats": [
+    ".gguf",
+    ".json"
+  ],
+  "platforms": [
+    "macOS",
+    "Windows",
+    "Linux"
+  ],
   "pricing": {
     "model": "free_open_source",
     "has_paid_tier": false

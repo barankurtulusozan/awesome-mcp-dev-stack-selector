@@ -8,7 +8,13 @@
   "repository": "https://github.com/Mintplex-Labs/anything-llm",
   "license_spdx": "MIT",
   "category": "ai-tools",
-  "tags": ["local-rag", "document-chat", "vector-database", "ai-workspace", "agent-tools"],
+  "tags": [
+    "local-rag",
+    "document-chat",
+    "vector-database",
+    "ai-workspace",
+    "agent-tools"
+  ],
   "capabilities": [
     "local-llm",
     "document-indexing",
@@ -16,8 +22,18 @@
     "multi-user-support",
     "offline-usable"
   ],
-  "import_export_formats": [".pdf", ".docx", ".txt", ".md", ".json"],
-  "platforms": ["macOS", "Windows", "Linux"],
+  "import_export_formats": [
+    ".pdf",
+    ".docx",
+    ".txt",
+    ".md",
+    ".json"
+  ],
+  "platforms": [
+    "macOS",
+    "Windows",
+    "Linux"
+  ],
   "pricing": {
     "model": "free_open_source",
     "has_paid_tier": true,

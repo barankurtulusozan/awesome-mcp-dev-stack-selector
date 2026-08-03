@@ -8,15 +8,28 @@
   "repository": "https://github.com/valkey-io/valkey",
   "license_spdx": "BSD-3-Clause",
   "category": "database-backend",
-  "tags": ["key-value", "in-memory", "redis-alternative", "cache", "pub-sub"],
+  "tags": [
+    "key-value",
+    "in-memory",
+    "redis-alternative",
+    "cache",
+    "pub-sub"
+  ],
   "capabilities": [
     "self-hosting",
     "in-memory-caching",
     "pub-sub-messaging",
     "high-availability"
   ],
-  "import_export_formats": [".rdb", ".aof"],
-  "platforms": ["macOS", "Windows", "Linux"],
+  "import_export_formats": [
+    ".rdb",
+    ".aof"
+  ],
+  "platforms": [
+    "macOS",
+    "Windows",
+    "Linux"
+  ],
   "pricing": {
     "model": "free_open_source",
     "has_paid_tier": false

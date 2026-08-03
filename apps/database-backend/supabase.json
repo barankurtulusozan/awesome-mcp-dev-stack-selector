@@ -8,7 +8,14 @@
   "repository": "https://github.com/supabase/supabase",
   "license_spdx": "Apache-2.0",
   "category": "database-backend",
-  "tags": ["baas", "firebase-alternative", "postgres", "authentication", "realtime", "storage"],
+  "tags": [
+    "baas",
+    "firebase-alternative",
+    "postgres",
+    "authentication",
+    "realtime",
+    "storage"
+  ],
   "capabilities": [
     "self-hosting",
     "relational-database",
@@ -16,8 +23,16 @@
     "authentication",
     "vector-search"
   ],
-  "import_export_formats": [".sql", ".json", "csv"],
-  "platforms": ["macOS", "Windows", "Linux"],
+  "import_export_formats": [
+    ".sql",
+    ".json",
+    "csv"
+  ],
+  "platforms": [
+    "macOS",
+    "Windows",
+    "Linux"
+  ],
   "pricing": {
     "model": "free_open_source",
     "has_paid_tier": true,

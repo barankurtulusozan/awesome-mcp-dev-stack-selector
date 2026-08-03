@@ -8,7 +8,13 @@
   "repository": "https://github.com/surrealdb/surrealdb",
   "license_spdx": "BSL-1.1",
   "category": "database-backend",
-  "tags": ["database", "multi-model", "graph-database", "vector-database", "realtime"],
+  "tags": [
+    "database",
+    "multi-model",
+    "graph-database",
+    "vector-database",
+    "realtime"
+  ],
   "capabilities": [
     "self-hosting",
     "graph-queries",
@@ -16,8 +22,15 @@
     "realtime-subscriptions",
     "embedded-mode"
   ],
-  "import_export_formats": [".surql", ".json"],
-  "platforms": ["macOS", "Windows", "Linux"],
+  "import_export_formats": [
+    ".surql",
+    ".json"
+  ],
+  "platforms": [
+    "macOS",
+    "Windows",
+    "Linux"
+  ],
   "pricing": {
     "model": "free_open_source",
     "has_paid_tier": true,

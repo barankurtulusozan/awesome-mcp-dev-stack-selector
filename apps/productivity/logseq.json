@@ -7,15 +7,30 @@
   "repository": "https://github.com/logseq/logseq",
   "license_spdx": "AGPL-3.0",
   "category": "productivity",
-  "tags": ["note-taking", "knowledge-base", "notion-alternative", "outliner", "graph-view"],
+  "tags": [
+    "note-taking",
+    "knowledge-base",
+    "notion-alternative",
+    "outliner",
+    "graph-view"
+  ],
   "capabilities": [
     "offline-editing",
     "bidirectional-linking",
     "graph-visualization",
     "plugin-system"
   ],
-  "import_export_formats": [".md", ".org", ".json", ".edn"],
-  "platforms": ["macOS", "Windows", "Linux"],
+  "import_export_formats": [
+    ".md",
+    ".org",
+    ".json",
+    ".edn"
+  ],
+  "platforms": [
+    "macOS",
+    "Windows",
+    "Linux"
+  ],
   "pricing": {
     "model": "free_open_source",
     "has_paid_tier": true,

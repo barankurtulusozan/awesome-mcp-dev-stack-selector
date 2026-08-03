@@ -8,7 +8,14 @@
   "repository": "https://github.com/appwrite/appwrite",
   "license_spdx": "BSD-3-Clause",
   "category": "database-backend",
-  "tags": ["baas", "firebase-alternative", "backend", "authentication", "serverless", "databases"],
+  "tags": [
+    "baas",
+    "firebase-alternative",
+    "backend",
+    "authentication",
+    "serverless",
+    "databases"
+  ],
   "capabilities": [
     "self-hosting",
     "authentication",
@@ -16,8 +23,15 @@
     "serverless-functions",
     "realtime-events"
   ],
-  "import_export_formats": [".json", ".csv"],
-  "platforms": ["macOS", "Windows", "Linux"],
+  "import_export_formats": [
+    ".json",
+    ".csv"
+  ],
+  "platforms": [
+    "macOS",
+    "Windows",
+    "Linux"
+  ],
   "pricing": {
     "model": "free_open_source",
     "has_paid_tier": true,

@@ -7,15 +7,30 @@
   "repository": "https://github.com/obsproject/obs-studio",
   "license_spdx": "GPL-2.0-only",
   "category": "design-media",
-  "tags": ["streaming", "screen-recording", "broadcasting", "video-capture", "obs"],
+  "tags": [
+    "streaming",
+    "screen-recording",
+    "broadcasting",
+    "video-capture",
+    "obs"
+  ],
   "capabilities": [
     "live-streaming",
     "screen-recording",
     "scene-composition",
     "plugin-system"
   ],
-  "import_export_formats": [".mkv", ".mp4", ".flv", ".json"],
-  "platforms": ["macOS", "Windows", "Linux"],
+  "import_export_formats": [
+    ".mkv",
+    ".mp4",
+    ".flv",
+    ".json"
+  ],
+  "platforms": [
+    "macOS",
+    "Windows",
+    "Linux"
+  ],
   "pricing": {
     "model": "free_open_source",
     "has_paid_tier": false

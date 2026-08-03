@@ -8,7 +8,13 @@
   "repository": "https://github.com/hoppscotch/hoppscotch",
   "license_spdx": "MIT",
   "category": "developer-tools",
-  "tags": ["api-client", "postman-alternative", "rest", "graphql", "websocket"],
+  "tags": [
+    "api-client",
+    "postman-alternative",
+    "rest",
+    "graphql",
+    "websocket"
+  ],
   "capabilities": [
     "self-hosting",
     "web-based",
@@ -16,8 +22,16 @@
     "websocket-testing",
     "environment-variables"
   ],
-  "import_export_formats": [".json", "postman-collection-v2", "openapi-spec"],
-  "platforms": ["macOS", "Windows", "Linux"],
+  "import_export_formats": [
+    ".json",
+    "postman-collection-v2",
+    "openapi-spec"
+  ],
+  "platforms": [
+    "macOS",
+    "Windows",
+    "Linux"
+  ],
   "pricing": {
     "model": "free_open_source",
     "has_paid_tier": true,

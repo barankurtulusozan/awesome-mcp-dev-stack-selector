@@ -8,15 +8,28 @@
   "repository": "https://github.com/janhq/jan",
   "license_spdx": "AGPL-3.0",
   "category": "ai-tools",
-  "tags": ["local-ai", "chatgpt-alternative", "offline-llm", "gguf", "privacy-first"],
+  "tags": [
+    "local-ai",
+    "chatgpt-alternative",
+    "offline-llm",
+    "gguf",
+    "privacy-first"
+  ],
   "capabilities": [
     "local-llm",
     "offline-usable",
     "openai-api-compatibility",
     "model-management"
   ],
-  "import_export_formats": [".gguf", ".json"],
-  "platforms": ["macOS", "Windows", "Linux"],
+  "import_export_formats": [
+    ".gguf",
+    ".json"
+  ],
+  "platforms": [
+    "macOS",
+    "Windows",
+    "Linux"
+  ],
   "pricing": {
     "model": "free_open_source",
     "has_paid_tier": false

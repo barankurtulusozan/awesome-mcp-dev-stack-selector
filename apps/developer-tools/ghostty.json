@@ -7,7 +7,12 @@
   "repository": "https://github.com/ghostty-org/ghostty",
   "license_spdx": "MIT",
   "category": "developer-tools",
-  "tags": ["terminal", "gpu-accelerated", "iterm-alternative", "cross-platform"],
+  "tags": [
+    "terminal",
+    "gpu-accelerated",
+    "iterm-alternative",
+    "cross-platform"
+  ],
   "capabilities": [
     "gpu-accelerated",
     "native-rendering",
@@ -15,7 +20,10 @@
     "cli-first"
   ],
   "import_export_formats": [],
-  "platforms": ["macOS", "Linux"],
+  "platforms": [
+    "macOS",
+    "Linux"
+  ],
   "pricing": {
     "model": "free_open_source",
     "has_paid_tier": false

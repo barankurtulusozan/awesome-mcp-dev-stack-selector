@@ -62,5 +62,5 @@
     "verified_publisher": true,
     "last_audit_date": "2026-07-30"
   },
-  "health_status": "healthy"
+  "health_status": "degraded"
 }
