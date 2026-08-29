@@ -1,0 +1,52 @@
+{
+  "$schema": "https://raw.githubusercontent.com/awesome-mcp-dev-stack-selector/main/schema/app.schema.json",
+  "id": "sandbase-cli",
+  "name": "SandBase CLI",
+  "tagline": "Local MCP gateway for multi-model AI APIs",
+  "description": "Open-source CLI and local Model Context Protocol server with six tools for discovering and running 2,000+ AI models through one API.",
+  "website": "https://sandbase.ai",
+  "repository": "https://github.com/sandbaseai/cli",
+  "license_spdx": "Apache-2.0",
+  "category": "ai-tools",
+  "tags": [
+    "mcp",
+    "model-gateway",
+    "multi-model",
+    "cli",
+    "ai-apis"
+  ],
+  "capabilities": [
+    "model-discovery",
+    "model-execution",
+    "mcp-server",
+    "multi-provider-access"
+  ],
+  "platforms": [
+    "macOS",
+    "Windows",
+    "Linux"
+  ],
+  "pricing": {
+    "model": "free_open_source",
+    "has_paid_tier": true,
+    "paid_tier_description": "Model and API usage is billed by the selected provider."
+  },
+  "privacy": {
+    "telemetry": false,
+    "offline_usable": false,
+    "cloud_sync_required": false
+  },
+  "self_hosting": {
+    "supported": true,
+    "docker_compose": false
+  },
+  "installation": {
+    "macOS": "brew install sandbaseai/tap/sandbaseai-cli",
+    "Linux": "npm install -g sandbaseai-cli"
+  },
+  "security": {
+    "verified_publisher": false,
+    "last_audit_date": "2026-08-29"
+  },
+  "health_status": "healthy"
+}
