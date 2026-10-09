@@ -1,147 +1,147 @@
 {
   "vscodium": {
     "consecutive_fails": 0,
-    "last_check": "2026-10-08T08:15:28.819Z",
+    "last_check": "2026-10-09T08:16:53.748Z",
     "status": "healthy"
   },
   "dbeaver": {
     "consecutive_fails": 0,
-    "last_check": "2026-10-08T08:15:31.618Z",
+    "last_check": "2026-10-09T08:16:55.839Z",
     "status": "healthy"
   },
   "bruno": {
     "consecutive_fails": 0,
-    "last_check": "2026-10-08T08:15:32.413Z",
+    "last_check": "2026-10-09T08:16:56.351Z",
     "status": "healthy"
   },
   "inkscape": {
-    "consecutive_fails": 3,
-    "last_check": "2026-10-08T08:15:40.133Z",
-    "status": "degraded"
+    "consecutive_fails": 0,
+    "last_check": "2026-10-09T08:16:58.854Z",
+    "status": "healthy"
   },
   "gimp": {
-    "consecutive_fails": 69,
-    "last_check": "2026-10-08T08:15:40.538Z",
+    "consecutive_fails": 70,
+    "last_check": "2026-10-09T08:16:59.223Z",
     "status": "degraded"
   },
   "podman": {
     "consecutive_fails": 0,
-    "last_check": "2026-10-08T08:15:47.905Z",
+    "last_check": "2026-10-09T08:17:04.343Z",
     "status": "healthy"
   },
   "pocketbase": {
     "consecutive_fails": 0,
-    "last_check": "2026-10-08T08:15:49.468Z",
+    "last_check": "2026-10-09T08:17:05.413Z",
     "status": "healthy"
   },
   "ollama": {
     "consecutive_fails": 0,
-    "last_check": "2026-10-08T08:15:51.944Z",
+    "last_check": "2026-10-09T08:17:07.796Z",
     "status": "healthy"
   },
   "lm-studio": {
     "consecutive_fails": 0,
-    "last_check": "2026-10-08T08:15:52.191Z",
+    "last_check": "2026-10-09T08:17:08.194Z",
     "status": "healthy"
   },
   "logseq": {
     "consecutive_fails": 0,
-    "last_check": "2026-10-08T08:15:26.871Z",
+    "last_check": "2026-10-09T08:16:52.293Z",
     "status": "healthy"
   },
   "zed": {
     "consecutive_fails": 0,
-    "last_check": "2026-10-08T08:15:28.108Z",
+    "last_check": "2026-10-09T08:16:53.304Z",
     "status": "healthy"
   },
   "lazygit": {
     "consecutive_fails": 0,
-    "last_check": "2026-10-08T08:15:29.575Z",
+    "last_check": "2026-10-09T08:16:54.324Z",
     "status": "healthy"
   },
   "hoppscotch": {
     "consecutive_fails": 0,
-    "last_check": "2026-10-08T08:15:30.132Z",
+    "last_check": "2026-10-09T08:16:54.747Z",
     "status": "healthy"
   },
   "ghostty": {
     "consecutive_fails": 0,
-    "last_check": "2026-10-08T08:15:30.819Z",
+    "last_check": "2026-10-09T08:16:55.318Z",
     "status": "healthy"
   },
   "penpot": {
     "consecutive_fails": 0,
-    "last_check": "2026-10-08T08:15:33.559Z",
+    "last_check": "2026-10-09T08:16:57.217Z",
     "status": "healthy"
   },
   "obs-studio": {
     "consecutive_fails": 0,
-    "last_check": "2026-10-08T08:15:34.460Z",
+    "last_check": "2026-10-09T08:16:57.848Z",
     "status": "healthy"
   },
   "blender": {
     "consecutive_fails": 0,
-    "last_check": "2026-10-08T08:15:42.161Z",
+    "last_check": "2026-10-09T08:17:00.904Z",
     "status": "healthy"
   },
   "valkey": {
     "consecutive_fails": 0,
-    "last_check": "2026-10-08T08:15:43.105Z",
+    "last_check": "2026-10-09T08:17:01.434Z",
     "status": "healthy"
   },
   "surrealdb": {
     "consecutive_fails": 0,
-    "last_check": "2026-10-08T08:15:44.815Z",
+    "last_check": "2026-10-09T08:17:02.139Z",
     "status": "healthy"
   },
   "supabase": {
     "consecutive_fails": 0,
-    "last_check": "2026-10-08T08:15:45.432Z",
+    "last_check": "2026-10-09T08:17:02.562Z",
     "status": "healthy"
   },
   "meilisearch": {
     "consecutive_fails": 0,
-    "last_check": "2026-10-08T08:15:46.113Z",
+    "last_check": "2026-10-09T08:17:03.029Z",
     "status": "healthy"
   },
   "appwrite": {
     "consecutive_fails": 0,
-    "last_check": "2026-10-08T08:15:47.309Z",
+    "last_check": "2026-10-09T08:17:04.069Z",
     "status": "healthy"
   },
   "opentofu": {
     "consecutive_fails": 0,
-    "last_check": "2026-10-08T08:15:50.115Z",
+    "last_check": "2026-10-09T08:17:05.850Z",
     "status": "healthy"
   },
   "k3s": {
     "consecutive_fails": 0,
-    "last_check": "2026-10-08T08:15:50.645Z",
+    "last_check": "2026-10-09T08:17:06.425Z",
     "status": "healthy"
   },
   "open-webui": {
     "consecutive_fails": 0,
-    "last_check": "2026-10-08T08:15:51.203Z",
+    "last_check": "2026-10-09T08:17:07.171Z",
     "status": "healthy"
   },
   "librechat": {
     "consecutive_fails": 0,
-    "last_check": "2026-10-08T08:15:52.611Z",
+    "last_check": "2026-10-09T08:17:08.363Z",
     "status": "healthy"
   },
   "jan": {
     "consecutive_fails": 0,
-    "last_check": "2026-10-08T08:15:53.112Z",
+    "last_check": "2026-10-09T08:17:08.868Z",
     "status": "healthy"
   },
   "gpt4all": {
     "consecutive_fails": 0,
-    "last_check": "2026-10-08T08:15:53.777Z",
+    "last_check": "2026-10-09T08:17:09.342Z",
     "status": "healthy"
   },
   "anything-llm": {
     "consecutive_fails": 0,
-    "last_check": "2026-10-08T08:15:54.363Z",
+    "last_check": "2026-10-09T08:17:09.804Z",
     "status": "healthy"
   }
 }
